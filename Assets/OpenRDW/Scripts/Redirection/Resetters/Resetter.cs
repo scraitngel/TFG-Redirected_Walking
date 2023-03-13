@@ -57,6 +57,8 @@ public abstract class Resetter : MonoBehaviour {
         return redirectionManager.currPosReal.magnitude;
     }
     
+    private int framesCount = 0;
+    private float lastDistance = -1.0f;
     public bool IfCollisionHappens()
     {
         if (redirectionManager.globalConfiguration.movementController == GlobalConfiguration.MovementController.HMD) {
@@ -65,14 +67,21 @@ public abstract class Resetter : MonoBehaviour {
                 PxrBoundaryTriggerInfo info = PXR_Boundary.TestNode(BoundaryTrackingNode.Head, BoundaryType.OuterBoundary);
                 
                 if (info.valid) {
-                    float walkingDistance = (redirectionManager.currPos - redirectionManager.prevPos).magnitude;
+                    if (lastDistance == -1) {
+                        lastDistance = info.closestDistance;
+                        framesCount++;
+                    } else if (lastDistance < info.closestDistance) {
+                        framesCount = 0;
+                        lastDistance = info.closestDistance;
+                    } else {
+                        framesCount++;
+                    }
 
-                    float distanceDetection = 0.5f + walkingDistance, 
-                        angleWithNormal = Vector2.Angle(
-                                new Vector2(info.closestPointNormal.x, info.closestPointNormal.z), 
-                                new Vector2(redirectionManager.currDir.x, redirectionManager.currDir.z));
-                    redirectionManager.textBox.text = distanceDetection.ToString() + " " + angleWithNormal.ToString();
-                    if (info.closestDistance < distanceDetection && angleWithNormal < 50.0f) {
+                    float walkingDistance = (redirectionManager.currPos - redirectionManager.prevPos).magnitude;
+                    float distanceDetection = 0.5f + walkingDistance;
+                    
+                    redirectionManager.textBox.text = distanceDetection.ToString() + " " + framesCount;
+                    if (info.closestDistance < distanceDetection && framesCount > 5) {
                         return true;
                     }
                 }

@@ -15,7 +15,7 @@ D:/Unity Proyects/TFG-Redirected_Walking
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-42829
+3194
 Successfully changed project path to: D:/Unity Proyects/TFG-Redirected_Walking
 D:/Unity Proyects/TFG-Redirected_Walking
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,8 +47,8 @@ D:/Unity Proyects/TFG-Redirected_Walking
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 89.05 ms, found 21 plugins.
-Preloading 1 native plugins for Editor in 1.63 ms.
+Refreshing native plugins compatible for Editor in 443.38 ms, found 21 plugins.
+Preloading 1 native plugins for Editor in 14.59 ms.
 Initialize engine version: 2021.3.14f1 (eee1884e7226)
 [Subsystems] Discovering subsystems at path D:/program files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/Unity Proyects/TFG-Redirected_Walking/Assets
@@ -63,180 +63,47 @@ Initialize mono
 Mono path[0] = 'D:/program files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/Managed'
 Mono path[1] = 'D:/program files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/program files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56808
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/program files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: D:/program files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/program files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005313 seconds.
+Registered in 0.005514 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 58.92 ms, found 21 plugins.
-Preloading 1 native plugins for Editor in 0.18 ms.
+Refreshing native plugins compatible for Editor in 61.90 ms, found 21 plugins.
+Preloading 1 native plugins for Editor in 0.16 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.681 seconds
+- Completed reload, in  0.720 seconds
 Domain Reload Profiling:
-	ReloadAssembly (681ms)
-		BeginReloadAssembly (95ms)
+	ReloadAssembly (721ms)
+		BeginReloadAssembly (102ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (480ms)
-			LoadAssemblies (96ms)
+		EndReloadAssembly (512ms)
+			LoadAssemblies (103ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (116ms)
+			SetupTypeCache (118ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (289ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (313ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (54ms)
+				InitializePlatformSupportModulesInManaged (59ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (59ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (95ms)
-				ProcessInitializeOnLoadMethodAttributes (80ms)
+				RefreshPlugins (62ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (98ms)
+				ProcessInitializeOnLoadMethodAttributes (92ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.014787 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 62.12 ms, found 21 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
-Package Manager log level set to [2]
-PXRLog [Build Check]RegisterBuildPlayerHandler,Already Do not show: True
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-Unity.XR.PXR.Editor.PXR_SDKBuildCheck:.cctor () (at D:/Unity Proyects/PICO Unity Integration SDK v212/Editor/PXR_SDKBuildCheck.cs:30)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: D:/Unity Proyects/PICO Unity Integration SDK v212/Editor/PXR_SDKBuildCheck.cs Line: 30)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.354 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1354ms)
-		BeginReloadAssembly (271ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (139ms)
-		EndReloadAssembly (972ms)
-			LoadAssemblies (132ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (260ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (80ms)
-			SetupLoadedEditorAssemblies (479ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (63ms)
-				BeforeProcessingInitializeOnLoad (81ms)
-				ProcessInitializeOnLoadAttributes (290ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.17 ms, found 21 plugins.
-Preloading 1 native plugins for Editor in 0.05 ms.
-Unloading 3843 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 112 unused Assets / (22.2 MB). Loaded Objects now: 4224.
-Memory consumption went from 208.0 MB to 185.8 MB.
-Total: 7.088300 ms (FindLiveObjects: 0.324200 ms CreateObjectMapping: 0.224600 ms MarkObjects: 3.467100 ms  DeleteObjects: 3.071400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1684338.985974 seconds.
-  path: Assets/OpenRDW
-  artifactKey: Guid(6f0caa423cd57774584dc8800c04c616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW using Guid(6f0caa423cd57774584dc8800c04c616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dab565cbd881fa0f14c6a8ca612a0add') in 0.025450 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.393640 seconds.
-  path: Assets/OpenRDW/Scenes
-  artifactKey: Guid(291da3cc47a9d3b42923ad75493cd659) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes using Guid(291da3cc47a9d3b42923ad75493cd659) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b90b4b3323bb0dd9c9cd4aae5a6b4d6a') in 0.009085 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.509411 seconds.
-  path: Assets/OpenRDW/Scenes/Menu Scenes
-  artifactKey: Guid(3b2b91dc5c3972540b11980f5b673a68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/Menu Scenes using Guid(3b2b91dc5c3972540b11980f5b673a68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b50529cb0ae03a15b226b7580b31d5f0') in 0.007266 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.634179 seconds.
-  path: Assets/OpenRDW/Scenes/Menu Scenes/Menu_Scene_PC.unity
-  artifactKey: Guid(3d35fe1c519f79c41b60a50f4fe1ccd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/Menu Scenes/Menu_Scene_PC.unity using Guid(3d35fe1c519f79c41b60a50f4fe1ccd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de9358e431945c361fa4e78d94d8efb4') in 0.014330 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.552559 seconds.
-  path: Assets/OpenRDW/Scenes/Menu Scenes/Menu_Scene_VR.unity
-  artifactKey: Guid(f728ba57354df4b47bc3bf57340197e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/Menu Scenes/Menu_Scene_VR.unity using Guid(f728ba57354df4b47bc3bf57340197e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb10ec55894d0f1f375a3e19fc3cb64f') in 0.007863 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.425822 seconds.
-  path: Assets/OpenRDW/Scenes/Menu Scenes/Menu_Scene_VRHelp.unity
-  artifactKey: Guid(51cdd40826dada5468be20f889b22504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/Menu Scenes/Menu_Scene_VRHelp.unity using Guid(51cdd40826dada5468be20f889b22504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59b50ca2613a74bc6aaacdc1780f4818') in 0.007980 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.700741 seconds.
-  path: Assets/OpenRDW/Scenes/Menu Scenes/Test Scene.unity
-  artifactKey: Guid(c054f45dad00bfe45b471421331a8642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/Menu Scenes/Test Scene.unity using Guid(c054f45dad00bfe45b471421331a8642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82e6afad4519aab36fa71cbb5aefed6b') in 0.006987 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.262327 seconds.
-  path: Assets/OpenRDW/Scenes/Menu Scenes/VR_Scene.unity
-  artifactKey: Guid(968253a2dc027a947adeb1942245de5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/Menu Scenes/VR_Scene.unity using Guid(968253a2dc027a947adeb1942245de5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee9b835ad8eaac2d67473d14cc6e9fe1') in 0.015705 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 59.792694 seconds.
-  path: Assets/OpenRDW/Scenes/OpenRDW Scene
-  artifactKey: Guid(06a50e7839a359748b7d33b489b0693f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/OpenRDW Scene using Guid(06a50e7839a359748b7d33b489b0693f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca435e9c4aba819f04533d2ac32c5634') in 0.005976 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.034290 seconds.
-  path: Assets/OpenRDW/Scenes/OpenRDW Scene/LightingData.asset
-  artifactKey: Guid(5f4b7fb49535b48408eeef2c8d6b289d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/OpenRDW Scene/LightingData.asset using Guid(5f4b7fb49535b48408eeef2c8d6b289d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24ccd967b536d86e07e2ff7d1adfe8db') in 0.053144 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.276820 seconds.
-  path: Assets/OpenRDW/Scenes/OpenRDW Scene.unity
-  artifactKey: Guid(c34e7a5b999447f47b3d87bb781a9054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OpenRDW/Scenes/OpenRDW Scene.unity using Guid(c34e7a5b999447f47b3d87bb781a9054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2443e73583d089b2aae813b16fe23abd') in 0.008335 seconds 
+Registered in 0.014991 seconds.
+Android Extension - Scanning For ADB Devices 764 ms
