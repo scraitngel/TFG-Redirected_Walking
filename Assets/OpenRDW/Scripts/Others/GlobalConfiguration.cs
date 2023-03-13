@@ -6,6 +6,7 @@ using AvatarInfo = ExperimentSetup.AvatarInfo;
 using System.IO;
 using UnityEngine.UI;
 using Unity.XR.PXR;
+using mattatz.Triangulation2DSystem;
 
 //Store common parameters 
 public class GlobalConfiguration : MonoBehaviour
@@ -1072,8 +1073,22 @@ public class GlobalConfiguration : MonoBehaviour
             
             //reload data from experimentSetups
             mm.LoadData(id, avatarList[id]);
-            mm.GenerateTrackingSpaceMesh(trackingSpacePoints, obstaclePolygons);
-            
+            if (dispChoice == DispChoice.Pico) {
+                Polygon2D polygon = Polygon2D.Contour(trackingSpacePoints.ToArray());
+
+                // construct Triangulation2D with Polygon2D and threshold angle (18f ~ 27f recommended)
+                Triangulation2D triangulation = new mattatz.Triangulation2DSystem.Triangulation2D(polygon, 22.5f);
+
+                // build a mesh from triangles in a Triangulation2D instance
+                Mesh mesh = triangulation.Build();
+                mm.plane.GetComponent<MeshFilter>().mesh = mesh;
+
+                mm.plane.position = new Vector3(0.0f, 0.0f, 0.0f);
+                mm.plane.eulerAngles = new Vector3(90.0f, 0.0f, 0.0f);
+
+            } else {
+                mm.GenerateTrackingSpaceMesh(trackingSpacePoints, obstaclePolygons);
+            }
         }
         
         Initialize();
