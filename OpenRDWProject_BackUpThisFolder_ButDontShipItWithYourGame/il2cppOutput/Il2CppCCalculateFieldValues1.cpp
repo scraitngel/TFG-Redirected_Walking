@@ -37484,6 +37484,10 @@ struct Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8  : public MonoBehaviou
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___prefabHUD_7;
 	// UnityEngine.Transform Resetter::instanceHUD
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___instanceHUD_8;
+	// System.Int32 Resetter::framesCount
+	int32_t ___framesCount_9;
+	// System.Single Resetter::lastDistance
+	float ___lastDistance_10;
 };
 
 struct Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8_StaticFields
@@ -38462,15 +38466,15 @@ struct APF_Redirector_tF7DB7CD2F1F5A9DE927B24913E75E118F67FEEE0  : public Redire
 struct APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0  : public Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8
 {
 	// System.Single APF_Resetter::requiredRotateSteerAngle
-	float ___requiredRotateSteerAngle_9;
+	float ___requiredRotateSteerAngle_11;
 	// System.Single APF_Resetter::requiredRotateAngle
-	float ___requiredRotateAngle_10;
+	float ___requiredRotateAngle_12;
 	// System.Single APF_Resetter::rotateDir
-	float ___rotateDir_11;
+	float ___rotateDir_13;
 	// System.Single APF_Resetter::speedRatio
-	float ___speedRatio_12;
+	float ___speedRatio_14;
 	// APF_Redirector APF_Resetter::redirector
-	APF_Redirector_tF7DB7CD2F1F5A9DE927B24913E75E118F67FEEE0* ___redirector_13;
+	APF_Redirector_tF7DB7CD2F1F5A9DE927B24913E75E118F67FEEE0* ___redirector_15;
 };
 
 // UnityEngine.XR.Interaction.Toolkit.ActionBasedController
@@ -39158,9 +39162,9 @@ struct ToggleGroup_tF2E6FE7D4B17BDBF82462715CFB57C4FDE0A2A2C  : public UIBehavio
 struct TwoOneTurnResetter_tB0CF3F7DB1243AA3BED4CFCA0F94930C75BB4481  : public Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8
 {
 	// System.Single TwoOneTurnResetter::overallInjectedRotation
-	float ___overallInjectedRotation_9;
+	float ___overallInjectedRotation_11;
 	// System.Single TwoOneTurnResetter::requiredRotateAngle
-	float ___requiredRotateAngle_10;
+	float ___requiredRotateAngle_12;
 };
 
 // UnityEngine.XR.Interaction.Toolkit.XRBaseControllerInteractor
@@ -47269,13 +47273,13 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5835[9] =
 	static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___realTarget0_7)),static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___realTarget1_8)),static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___RealTarget0DefaultPosition_9)),static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___RealTarget1DefaultPosition_10)),static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___WAYPOINT_UPDATE_DISTANCE_11)),static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___SLOW_DOWN_VELOCITY_THRESHOLD_12)),static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___headingToTarget0_13)),static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___waypointIndex_14)),static_cast<int32_t>(offsetof(ZigZagRedirector_tD0F5E6C5D8FD7705E27E2BBE4D3C85670E29D060, ___initialized_15)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5836[5] = 
 {
-	static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___requiredRotateSteerAngle_9)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___requiredRotateAngle_10)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___rotateDir_11)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___speedRatio_12)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___redirector_13)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5838[5] = 
+	static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___requiredRotateSteerAngle_11)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___requiredRotateAngle_12)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___rotateDir_13)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___speedRatio_14)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___redirector_15)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5838[7] = 
 {
-	static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8_StaticFields, ___toleranceAngleError_4)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___redirectionManager_5)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___simulationManager_6)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___prefabHUD_7)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___instanceHUD_8)),};
+	static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8_StaticFields, ___toleranceAngleError_4)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___redirectionManager_5)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___simulationManager_6)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___prefabHUD_7)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___instanceHUD_8)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___framesCount_9)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___lastDistance_10)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5839[2] = 
 {
-	static_cast<int32_t>(offsetof(TwoOneTurnResetter_tB0CF3F7DB1243AA3BED4CFCA0F94930C75BB4481, ___overallInjectedRotation_9)),static_cast<int32_t>(offsetof(TwoOneTurnResetter_tB0CF3F7DB1243AA3BED4CFCA0F94930C75BB4481, ___requiredRotateAngle_10)),};
+	static_cast<int32_t>(offsetof(TwoOneTurnResetter_tB0CF3F7DB1243AA3BED4CFCA0F94930C75BB4481, ___overallInjectedRotation_11)),static_cast<int32_t>(offsetof(TwoOneTurnResetter_tB0CF3F7DB1243AA3BED4CFCA0F94930C75BB4481, ___requiredRotateAngle_12)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5840[4] = 
 {
 	static_cast<int32_t>(offsetof(ConnectAndJoinRandomLb_tB03E3C55EE4600CE6CE25C6DB2632F6CA029CF39, ___appSettings_4)),static_cast<int32_t>(offsetof(ConnectAndJoinRandomLb_tB03E3C55EE4600CE6CE25C6DB2632F6CA029CF39, ___lbc_5)),static_cast<int32_t>(offsetof(ConnectAndJoinRandomLb_tB03E3C55EE4600CE6CE25C6DB2632F6CA029CF39, ___ch_6)),static_cast<int32_t>(offsetof(ConnectAndJoinRandomLb_tB03E3C55EE4600CE6CE25C6DB2632F6CA029CF39, ___StateUiText_7)),};

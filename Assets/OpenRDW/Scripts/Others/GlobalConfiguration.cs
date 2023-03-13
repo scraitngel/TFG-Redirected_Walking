@@ -322,7 +322,10 @@ public class GlobalConfiguration : MonoBehaviour
     #endregion              
        
     private void Awake()
-    {        
+    {       
+        if (dispChoice == DispChoice.Pico) {
+            PXR_System.InitAudioDevice();
+        } 
         startTimeOfProgram = Utilities.GetTimeString();
         statisticsLogger = GetComponent<StatisticsLogger>();
 

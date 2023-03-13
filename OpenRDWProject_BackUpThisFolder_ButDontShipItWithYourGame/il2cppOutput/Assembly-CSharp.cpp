@@ -4272,6 +4272,10 @@ struct Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8  : public MonoBehaviou
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___prefabHUD_7;
 	// UnityEngine.Transform Resetter::instanceHUD
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___instanceHUD_8;
+	// System.Int32 Resetter::framesCount
+	int32_t ___framesCount_9;
+	// System.Single Resetter::lastDistance
+	float ___lastDistance_10;
 };
 
 struct Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8_StaticFields
