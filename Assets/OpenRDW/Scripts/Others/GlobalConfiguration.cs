@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PathSeed = VirtualPathGenerator.PathSeed;
@@ -86,6 +87,14 @@ public class GlobalConfiguration : MonoBehaviour
     [Tooltip("Threshold to detect head movement in degrees")]
     [SerializeField, Range(1.0f, 30.0f)]
     public float MOVEMENT_THRESHOLD = 350.0f;
+
+    [Tooltip("Minimun time between the played sound")]
+    [SerializeField, Range(1.0f, 20.0f)]
+    public float MIN_TIME_SOUND = 2.0f;
+
+    [Tooltip("Maximun time between the played sound")]
+    [SerializeField, Range(1.0f, 20.0f)]
+    public float MAX_TIME_SOUND = 5.0f;
 
     [HideInInspector]
     public float simulatedTime = 0;//accumulated simulation time, clear after each trial
@@ -444,7 +453,7 @@ public class GlobalConfiguration : MonoBehaviour
                 MakeOneStepCycle();
             else if (movementController == MovementController.HMD)
             {
-                //press R key to start logging
+                //press R or Submit key to start logging
                 if (readyToStart)
                     MakeOneStepCycle();
             }
@@ -486,12 +495,12 @@ public class GlobalConfiguration : MonoBehaviour
             ShowAllAvatars();
         }
         //press key Q to stop Experiment manually
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.Q) || (readyToStart && movementController == MovementController.HMD && Input.GetButtonDown("Fire1"))) {
             EndExperiment(1);
         }
         //press Key S to take a snap shot
         if (Input.GetKeyDown(KeyCode.P)) {
-            Utilities.CaptureScreenShot(statisticsLogger.SCREENSHOTS_DERECTORY+Utilities.GetTimeStringForFileName()+".png",statisticsLogger.superSize);
+            Utilities.CaptureScreenShot(statisticsLogger.SCREENSHOTS_DERECTORY + Utilities.GetTimeStringForFileName() + ".png",statisticsLogger.superSize);
         }
         //press key R to confirm ready
         if (Input.GetKeyDown(KeyCode.R) || (movementController == MovementController.HMD && Input.GetButton("Submit"))) {
@@ -1040,8 +1049,8 @@ public class GlobalConfiguration : MonoBehaviour
     }
     void StartNextExperiment()
     {        
-        Debug.Log(string.Format("---------- EXPERIMENT STARTED ----------"));        
-        Debug.Log(string.Format("trial:{0}/{1}, cmd file:{2}/{3}", experimentIterator + 1, experimentSetups.Count, experimentSetupsListIterator + 1, experimentSetupsList.Count));
+        //Debug.Log(string.Format("---------- EXPERIMENT STARTED ----------"));        
+        //Debug.Log(string.Format("trial:{0}/{1}, cmd file:{2}/{3}", experimentIterator + 1, experimentSetups.Count, experimentSetupsListIterator + 1, experimentSetupsList.Count));
 
         //get current experimentSetup
         ExperimentSetup setup = experimentSetups[experimentIterator];
@@ -1077,17 +1086,25 @@ public class GlobalConfiguration : MonoBehaviour
             //reload data from experimentSetups
             mm.LoadData(id, avatarList[id]);
             if (dispChoice == DispChoice.Pico) {
-                Polygon2D polygon = Polygon2D.Contour(trackingSpacePoints.ToArray());
-
+                
+                /*Polygon2D polygon = Polygon2D.Contour(trackingSpacePoints.ToArray());
+                
                 // construct Triangulation2D with Polygon2D and threshold angle (18f ~ 27f recommended)
                 Triangulation2D triangulation = new mattatz.Triangulation2DSystem.Triangulation2D(polygon, 22.5f);
-
+                
                 // build a mesh from triangles in a Triangulation2D instance
-                Mesh mesh = triangulation.Build();
-                mm.plane.GetComponent<MeshFilter>().mesh = mesh;
+                Mesh mesh = triangulation.Build();*/
 
-                mm.plane.position = new Vector3(0.0f, 0.0f, 0.0f);
-                mm.plane.eulerAngles = new Vector3(90.0f, 0.0f, 0.0f);
+                Mesh boundaryMesh = TrackingSpaceGenerator.GeneratePolygonMesh(trackingSpacePoints);
+
+                Triangulator t = new Triangulator(trackingSpacePoints.ToArray());
+                boundaryMesh.Clear();
+                boundaryMesh.triangles = t.Triangulate();
+
+                mm.plane.GetComponent<MeshFilter>().mesh = boundaryMesh;
+
+                //mm.plane.position = new Vector3(0.0f, 0.0f, 0.0f);
+                //mm.plane.eulerAngles = new Vector3(90.0f, 0.0f, 0.0f);
 
             } else {
                 mm.GenerateTrackingSpaceMesh(trackingSpacePoints, obstaclePolygons);
@@ -1331,7 +1348,7 @@ public class GlobalConfiguration : MonoBehaviour
 
             GetResultDirAndFileName(statisticsLogger.SUMMARY_STATISTICS_DIRECTORY, out string resultDir, out string fileName);
 
-            Debug.Log(string.Format("Save data to resultDir:{0}, fileName:{1}", resultDir, fileName));
+            //Debug.Log(string.Format("Save data to resultDir:{0}, fileName:{1}", resultDir, fileName));
             statisticsLogger.LogExperimentSummaryStatisticsResultsSCSV(statisticsLogger.experimentResults, resultDir, fileName);
 
             //initialize experiment results 

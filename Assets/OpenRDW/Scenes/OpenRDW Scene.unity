@@ -812,7 +812,7 @@ MonoBehaviour:
   realTrailColor: {r: 1, g: 0, b: 0, a: 0}
   virtualTrailColor: {r: 0, g: 0, b: 1, a: 0}
   exportImage: 1
-  exportVideo: 1
+  exportVideo: 0
   statisticsLogger: {fileID: 0}
   passiveHaptics: 1
   physicalTargetTransforms:
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logSampleVariables: 1
-  samplingFrequency: 10
+  samplingFrequency: 2
   imageResolution: 2048
   realSideLength: 40
   borderThickness: 8
@@ -864,7 +864,6 @@ MonoBehaviour:
   frameRate: 30
   superSize: 1
   RESULT_DIRECTORY: Experiment Results/
-  RESULT_WITH_TIME_DIRECTORY: 
   SUMMARY_STATISTICS_DIRECTORY: Summary Statistics/
   SAMPLED_METRICS_DIRECTORY: Sampled Metrics/
   GRAPH_DERECTORY: Graphs/

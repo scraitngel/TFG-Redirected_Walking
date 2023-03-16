@@ -243,13 +243,13 @@ public class VideoRecorder : MonoBehaviour
             }
         }
         StartConvertion(tmpPictureDirectory, videoDirectory);
-        print("tmpPictureDirectory: " + tmpPictureDirectory);
-        print("videoDirectory: " + videoDirectory);
+        //print("tmpPictureDirectory: " + tmpPictureDirectory);
+        //print("videoDirectory: " + videoDirectory);
         //Directory.Delete(tmpPictureDirectory, true);        
         terminateThreadWhenDone = false;
         threadIsProcessing = false;
 
-        print("SCREENRECORDER IO THREAD FINISHED");        
+        //print("SCREENRECORDER IO THREAD FINISHED");        
     }
 
     //convert pictures to video

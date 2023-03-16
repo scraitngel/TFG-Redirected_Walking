@@ -184,34 +184,6 @@ public class RedirectionManager : MonoBehaviour
         lastLookdirection = headTransform.TransformDirection(Vector3.forward);
     }
 
-    /*public IEnumerator Blink()
-    {
-        while (true) {
-            //textBox.text = blockingVisionObject.position.ToString();
-            if (!inReset && redirector != null) {
-                blockingVisionObject.gameObject.SetActive(true);
-                blockingVisionObject.position = headTransform.position;
-                
-                float totalTime = UnityEngine.Random.Range(0.05f, 0.1f);
-                var start = Time.time;
-                
-                //Redirection function
-                samePosTime = 0;
-                CalculateStateChanges();
-                redirector.InjectRedirection();
-                ifJustEndReset = false;
-                UpdatePreviousUserState();
-                UpdateBodyPose();
-                
-                yield return new WaitForSeconds(MathF.Max(totalTime - (Time.time - start), 0.001f));
-
-                blockingVisionObject.gameObject.SetActive(!blockingVisionObject.gameObject.activeSelf);
-
-                yield return new WaitForSeconds(UnityEngine.Random.Range(5.0f, 6.0f));
-            }
-        }
-    }*/
-
     //modify these trhee functions when adding a new redirector
     //public System.Type RedirectorChoiceToRedirector(RedirectorChoice redirectorChoice)
     public System.Type RedirectorChoiceToRedirector()
@@ -407,10 +379,9 @@ public class RedirectionManager : MonoBehaviour
         {
             if (redirector != null)
             {
-                if (frames) {
-                    redirector.InjectRedirection();
-                }
+                if (sounds) {
 
+                } 
                 if (blinks) {
                     if (!inBlink && time >= blinkInterval) {
                         inBlink = true;
@@ -429,8 +400,7 @@ public class RedirectionManager : MonoBehaviour
                         blinkingTime = UnityEngine.Random.Range(0.05f, 0.1f);
                         blockingVisionObject.gameObject.SetActive(false);
                     }
-                }
-
+                } 
                 if (headMovement) {
                     Vector3 look = headTransform.TransformDirection(Vector3.forward);
                     float angle = Vector3.Angle(lastLookdirection, look);
@@ -443,6 +413,9 @@ public class RedirectionManager : MonoBehaviour
                     lastLookdirection = look;
 
                     //textBox.text = angle + " " + NRedirections;
+                } 
+                if (frames) {
+                    redirector.InjectRedirection();
                 }
             }
 

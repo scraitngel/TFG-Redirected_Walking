@@ -625,8 +625,8 @@ public class StatisticsLogger : MonoBehaviour {
     ////////////// LOGGING TO FILE
     [HideInInspector]
     public string RESULT_DIRECTORY;
-    [HideInInspector]
-    public string RESULT_WITH_TIME_DIRECTORY;//save results with time mark
+    //[HideInInspector]
+    //public string RESULT_WITH_TIME_DIRECTORY;//save results with time mark
     [HideInInspector]
     public string SUMMARY_STATISTICS_DIRECTORY;
     [HideInInspector]
@@ -654,8 +654,8 @@ public class StatisticsLogger : MonoBehaviour {
 
     void Awake()
     {
-        RESULT_DIRECTORY = "Experiment Results/";
-        RESULT_WITH_TIME_DIRECTORY = Utilities.GetTimeStringForFileName() + "/";
+        RESULT_DIRECTORY = Application.persistentDataPath + "/Experiment Results/";
+        //RESULT_WITH_TIME_DIRECTORY = Utilities.GetTimeStringForFileName() + "/";
         SUMMARY_STATISTICS_DIRECTORY = "Summary Statistics/";
         SAMPLED_METRICS_DIRECTORY = "Sampled Metrics/";
         GRAPH_DERECTORY = "Graphs/";
@@ -667,24 +667,24 @@ public class StatisticsLogger : MonoBehaviour {
         texVirtualPathGraph = new Texture2D(imageResolution, imageResolution);
 
         globalConfiguration = GetComponent<GlobalConfiguration>();
-        RESULT_DIRECTORY = Utilities.GetProjectPath() + RESULT_DIRECTORY;
-        RESULT_WITH_TIME_DIRECTORY = RESULT_DIRECTORY + RESULT_WITH_TIME_DIRECTORY;
-        SUMMARY_STATISTICS_DIRECTORY = RESULT_WITH_TIME_DIRECTORY + SUMMARY_STATISTICS_DIRECTORY;
-        SAMPLED_METRICS_DIRECTORY = RESULT_WITH_TIME_DIRECTORY + SAMPLED_METRICS_DIRECTORY;
-        GRAPH_DERECTORY = RESULT_WITH_TIME_DIRECTORY + GRAPH_DERECTORY;
-        TMP_DERECTORY = RESULT_WITH_TIME_DIRECTORY + TMP_DERECTORY;
-        VIDEO_DERECTORY = RESULT_WITH_TIME_DIRECTORY + VIDEO_DERECTORY;
-        SCREENSHOTS_DERECTORY = RESULT_WITH_TIME_DIRECTORY + SCREENSHOTS_DERECTORY;
+        //RESULT_DIRECTORY = Utilities.GetProjectPath() + RESULT_DIRECTORY;
+        //RESULT_WITH_TIME_DIRECTORY = RESULT_DIRECTORY + RESULT_WITH_TIME_DIRECTORY;
+        SUMMARY_STATISTICS_DIRECTORY = RESULT_DIRECTORY + SUMMARY_STATISTICS_DIRECTORY;
+        SAMPLED_METRICS_DIRECTORY = RESULT_DIRECTORY + SAMPLED_METRICS_DIRECTORY;
+        GRAPH_DERECTORY = RESULT_DIRECTORY + GRAPH_DERECTORY;
+        TMP_DERECTORY = RESULT_DIRECTORY + TMP_DERECTORY;
+        VIDEO_DERECTORY = RESULT_DIRECTORY + VIDEO_DERECTORY;
+        SCREENSHOTS_DERECTORY = RESULT_DIRECTORY + SCREENSHOTS_DERECTORY;
 
         //create relative directories        
-        Utilities.CreateDirectoryIfNeeded(RESULT_DIRECTORY);
+        /*Utilities.CreateDirectoryIfNeeded(RESULT_DIRECTORY);
         Utilities.CreateDirectoryIfNeeded(RESULT_WITH_TIME_DIRECTORY);
         Utilities.CreateDirectoryIfNeeded(SUMMARY_STATISTICS_DIRECTORY);
         Utilities.CreateDirectoryIfNeeded(SAMPLED_METRICS_DIRECTORY);
         Utilities.CreateDirectoryIfNeeded(GRAPH_DERECTORY);
         Utilities.CreateDirectoryIfNeeded(TMP_DERECTORY);
         Utilities.CreateDirectoryIfNeeded(VIDEO_DERECTORY);
-        Utilities.CreateDirectoryIfNeeded(SCREENSHOTS_DERECTORY);        
+        Utilities.CreateDirectoryIfNeeded(SCREENSHOTS_DERECTORY);*/        
 
         obstacleColor = globalConfiguration.obstacleColor;
     }
@@ -704,7 +704,8 @@ public class StatisticsLogger : MonoBehaviour {
         settings.CloseOutput = true;
 
         // Create XML File
-        xmlWriter = XmlWriter.Create(SUMMARY_STATISTICS_DIRECTORY + SUMMARY_STATISTICS_XML_FILENAME + ".xml", settings);
+        xmlWriter = XmlWriter.Create(SUMMARY_STATISTICS_DIRECTORY + Utilities.GetTimeStringForFileName() + "-" +
+                        SUMMARY_STATISTICS_XML_FILENAME + ".xml", settings);
         xmlWriter.Settings.Indent = true;
         xmlWriter.WriteStartDocument();
         xmlWriter.WriteStartElement(XML_ROOT);
@@ -804,14 +805,16 @@ public class StatisticsLogger : MonoBehaviour {
         texRealPathGraph.Apply();
         
         //Export as png file
-        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + string.Format("{0}_{1}_realPath.png", experimentSetupId, Utilities.GetTimeStringForFileName()), texRealPathGraph);        
+        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + Utilities.GetTimeStringForFileName() + "-" + 
+                string.Format("{0}_{1}_realPath.png", experimentSetupId, Utilities.GetTimeStringForFileName()), texRealPathGraph);        
 
     }
 
     public void LogOneDimensionalExperimentSamples(string experimentSamplesDirectory, string measuredMetric, List<float> values)
     {        
         Utilities.CreateDirectoryIfNeeded(experimentSamplesDirectory);
-        csvWriter = new StreamWriter(experimentSamplesDirectory + measuredMetric + ".csv");
+        csvWriter = new StreamWriter(experimentSamplesDirectory + Utilities.GetTimeStringForFileName() + "-" + 
+                measuredMetric + ".csv");
         foreach (float value in values)
         {
             csvWriter.WriteLine(value);
@@ -823,7 +826,8 @@ public class StatisticsLogger : MonoBehaviour {
     public void LogTwoDimensionalExperimentSamples(string experimentSamplesDirectory, string measuredMetric, List<Vector2> values)
     {                
         Utilities.CreateDirectoryIfNeeded(experimentSamplesDirectory);
-        csvWriter = new StreamWriter(experimentSamplesDirectory + measuredMetric + ".csv");
+        csvWriter = new StreamWriter(experimentSamplesDirectory + Utilities.GetTimeStringForFileName() + "-" + 
+                            measuredMetric + ".csv");
         foreach (Vector2 value in values)
         {
             csvWriter.WriteLine(value.x + ", " + value.y);
@@ -839,9 +843,9 @@ public class StatisticsLogger : MonoBehaviour {
         Utilities.CreateDirectoryIfNeeded(resultDir);
         resultDir += fileName + "/";
         Utilities.CreateDirectoryIfNeeded(resultDir);
-        string experimentSamplesDirectory = resultDir + experimentDecriptorString + "/";
-        Utilities.CreateDirectoryIfNeeded(experimentSamplesDirectory);
-        Debug.Log("experimentSamplesDirectory: " + experimentSamplesDirectory);
+        string experimentSamplesDirectory = resultDir /*+ experimentDecriptorString + "/"*/;
+        //Utilities.CreateDirectoryIfNeeded(experimentSamplesDirectory);
+        //Debug.Log("experimentSamplesDirectory: " + experimentSamplesDirectory);
 
         for (var i = 0; i < oneDimensionalSamplesMaps.Count; i++)
         {

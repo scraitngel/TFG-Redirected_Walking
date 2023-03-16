@@ -69,7 +69,7 @@ public abstract class Resetter : MonoBehaviour {
                 if (info.valid) {
                     if (lastDistance == -1) {
                         lastDistance = info.closestDistance;
-                        framesCount++;
+                        //framesCount++;
                     } else if (lastDistance < info.closestDistance) {
                         framesCount = 0;
                         lastDistance = info.closestDistance;
@@ -80,8 +80,9 @@ public abstract class Resetter : MonoBehaviour {
                     float walkingDistance = (redirectionManager.currPos - redirectionManager.prevPos).magnitude;
                     float distanceDetection = 0.5f + walkingDistance;
                     
-                    redirectionManager.textBox.text = distanceDetection.ToString() + " " + framesCount;
+                    //redirectionManager.textBox.text = distanceDetection.ToString() + " " + framesCount;
                     if (info.closestDistance < distanceDetection && framesCount > 5) {
+                        framesCount = 0;
                         return true;
                     }
                 }
