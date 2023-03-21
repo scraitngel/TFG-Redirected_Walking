@@ -54,6 +54,8 @@ public class StatisticsLogger : MonoBehaviour {
     public int borderThickness;
     [Tooltip("Path thickness drawn in the image")]
     public int pathThickness;
+    [Tooltip("Color of the virtual path in the image")]
+    public Color virtualColor;
 
     [Header("Video")]
     // Public Properties
@@ -651,6 +653,7 @@ public class StatisticsLogger : MonoBehaviour {
 
     private Texture2D texRealPathGraph;//tex for simulation real path logging
     private Texture2D texVirtualPathGraph;//tex for simulation virtual path logging
+    private Texture2D texCombinedPathGraph;
 
     void Awake()
     {
@@ -783,12 +786,21 @@ public class StatisticsLogger : MonoBehaviour {
 
         var trackingSpacePoints = experimentSetup.trackingSpacePoints;
         var obstaclePolygons = experimentSetup.obstaclePolygons;
-        for (int i = 0; i < trackingSpacePoints.Count; i++)
+        
+        for (int i = 0; i < trackingSpacePoints.Count; i++) {
             Utilities.DrawLine(texRealPathGraph, trackingSpacePoints[i], trackingSpacePoints[(i + 1) % trackingSpacePoints.Count], realSideLength, borderThickness, trackingSpaceColor);
-        foreach (var obstaclePolygon in obstaclePolygons)
+            Utilities.DrawLine(texVirtualPathGraph, trackingSpacePoints[i], trackingSpacePoints[(i + 1) % trackingSpacePoints.Count], realSideLength, borderThickness, trackingSpaceColor);
+            Utilities.DrawLine(texCombinedPathGraph, trackingSpacePoints[i], trackingSpacePoints[(i + 1) % trackingSpacePoints.Count], realSideLength, borderThickness, trackingSpaceColor);
+        }
+
+        foreach (var obstaclePolygon in obstaclePolygons) {
             Utilities.DrawPolygon(texRealPathGraph, obstaclePolygon, realSideLength, borderThickness, obstacleColor);
+            Utilities.DrawPolygon(texVirtualPathGraph, obstaclePolygon, realSideLength, borderThickness, obstacleColor);
+            Utilities.DrawPolygon(texCombinedPathGraph, obstaclePolygon, realSideLength, borderThickness, obstacleColor);
             //for (int i = 0; i < obstaclePolygon.Count; i++)
             //    Utilities.DrawLine(tex, obstaclePolygon[i], obstaclePolygon[(i + 1) % obstaclePolygon.Count], sideLength, borderThickness, obstacleColor);
+        }
+
         for (int uId = 0; uId < avatarStatistics.Count; uId++) {
             var color = globalConfiguration.avatarColors[uId];
             var realPosList = avatarStatistics[uId].userRealPositionSamples;
@@ -799,15 +811,31 @@ public class StatisticsLogger : MonoBehaviour {
                 var w = (beginWeight + deltaWeight * i);
                 //Debug.Log("realPosList[i]:" + realPosList[i].ToString("f3"));
                 Utilities.DrawLine(texRealPathGraph, realPosList[i], realPosList[i + 1], realSideLength, pathThickness, w * color + (1 - w) * backgroundColor, (w + deltaWeight) * color + (1 - w - deltaWeight) * backgroundColor);
+                Utilities.DrawLine(texCombinedPathGraph, realPosList[i], realPosList[i + 1], realSideLength, pathThickness, w * color + (1 - w) * backgroundColor, (w + deltaWeight) * color + (1 - w - deltaWeight) * backgroundColor);
             }
         }
-        
         texRealPathGraph.Apply();
+
+        for (int uId = 0; uId < avatarStatistics.Count; uId++) {
+            var virtualPosList = avatarStatistics[uId].userVirtualPositionSamples;
+            var beginWeight = 0.1f;
+            var deltaWeight = (1 - beginWeight) / virtualPosList.Count;
+            
+            for (int i = 0; i < virtualPosList.Count - 1; i++) {
+                var w = (beginWeight + deltaWeight * i);
+                //Debug.Log("realPosList[i]:" + realPosList[i].ToString("f3"));
+                Utilities.DrawLine(texVirtualPathGraph, virtualPosList[i], virtualPosList[i + 1], realSideLength, pathThickness, w * virtualColor + (1 - w) * backgroundColor, (w + deltaWeight) * virtualColor + (1 - w - deltaWeight) * backgroundColor);
+                Utilities.DrawLine(texCombinedPathGraph, virtualPosList[i], virtualPosList[i + 1], realSideLength, pathThickness, w * virtualColor + (1 - w) * backgroundColor, (w + deltaWeight) * virtualColor + (1 - w - deltaWeight) * backgroundColor);
+            }
+        }
+
+        texVirtualPathGraph.Apply();
+        texCombinedPathGraph.Apply();
         
         //Export as png file
-        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + Utilities.GetTimeStringForFileName() + "-" + 
-                string.Format("{0}_{1}_realPath.png", experimentSetupId, Utilities.GetTimeStringForFileName()), texRealPathGraph);        
-
+        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + Utilities.GetTimeStringForFileName() + "_virtualPath.png", texCombinedPathGraph); 
+        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + Utilities.GetTimeStringForFileName() + "_realPath.png", texCombinedPathGraph); 
+        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + Utilities.GetTimeStringForFileName() + "_combinedPath.png", texCombinedPathGraph); 
     }
 
     public void LogOneDimensionalExperimentSamples(string experimentSamplesDirectory, string measuredMetric, List<float> values)

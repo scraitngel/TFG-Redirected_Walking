@@ -1,4 +1,8 @@
-﻿using System.Linq;
+﻿using System.Reflection;
+using System.Security;
+using System.Net.Http;
+using System.Net.Mime;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +12,7 @@ using System.IO;
 using UnityEngine.UI;
 using Unity.XR.PXR;
 using mattatz.Triangulation2DSystem;
+using UnityEngine.SceneManagement;
 
 //Store common parameters 
 public class GlobalConfiguration : MonoBehaviour
@@ -59,6 +64,9 @@ public class GlobalConfiguration : MonoBehaviour
     public bool firstPersonView;
 
     private bool firstPersonViewOldChoice;
+
+    [SerializeField]
+    public Text textBox;
 
     [Tooltip("Translation gain (dilate)")]
     [Range(0, 5)]
@@ -282,7 +290,7 @@ public class GlobalConfiguration : MonoBehaviour
 
     [Header("Analysis")]
     [Tooltip("If export the image of simulation paths")]
-    public bool exportImage;
+    public bool exportImage = true;
 
     [Tooltip("If export the video of simulation, can't be used in backstage mode")]
     public bool exportVideo;
@@ -696,7 +704,7 @@ public class GlobalConfiguration : MonoBehaviour
         if (!experimentInProgress && experimentIterator < experimentSetups.Count)
         {
             StartNextExperiment();
-        }
+        } 
 
         if (experimentInProgress && !avatarIsWalking)
         {
@@ -1087,21 +1095,32 @@ public class GlobalConfiguration : MonoBehaviour
             mm.LoadData(id, avatarList[id]);
             if (dispChoice == DispChoice.Pico) {
                 
-                /*Polygon2D polygon = Polygon2D.Contour(trackingSpacePoints.ToArray());
-                
-                // construct Triangulation2D with Polygon2D and threshold angle (18f ~ 27f recommended)
-                Triangulation2D triangulation = new mattatz.Triangulation2DSystem.Triangulation2D(polygon, 22.5f);
-                
-                // build a mesh from triangles in a Triangulation2D instance
-                Mesh mesh = triangulation.Build();*/
+                //No utilizar a menos que quieras arriesgarte a entrar en un bucle infinito (HAY 2).
+                //  Si aun asi decides utilizarlo entonces descomenta tambien las últimas 2 lineas
+                    /*Polygon2D polygon = Polygon2D.Contour(trackingSpacePoints.ToArray());
+                    
+                    // construct Triangulation2D with Polygon2D and threshold angle (18f ~ 27f recommended)
+                    Triangulation2D triangulation = new mattatz.Triangulation2DSystem.Triangulation2D(polygon, 22.5f);
+                    
+                    // build a mesh from triangles in a Triangulation2D instance
+                    Mesh mesh = triangulation.Build();*/
 
-                Mesh boundaryMesh = TrackingSpaceGenerator.GeneratePolygonMesh(trackingSpacePoints);
+                mm.GenerateTrackingSpaceMesh(trackingSpacePoints, obstaclePolygons);
 
-                Triangulator t = new Triangulator(trackingSpacePoints.ToArray());
-                boundaryMesh.Clear();
-                boundaryMesh.triangles = t.Triangulate();
+                /*Mesh mesh = mm.plane.GetComponent<MeshFilter>().mesh;
+                Vector3[] vert = mesh.vertices;
+                mesh.Clear();
 
-                mm.plane.GetComponent<MeshFilter>().mesh = boundaryMesh;
+                Mesh subMesh = mesh.GetSubMesh(0);
+                Vector3[] vetSub = subMesh.vertices;
+
+                foreach (Vector3 v in vetSub) {
+                    int i = vert.Find(v);
+                    if (i != -1) vert.RemoveAt(i);
+                }
+
+                mesh.vertices = vert;
+                mm.plane.GetComponent<MeshFilter>().mesh = mesh;*/
 
                 //mm.plane.position = new Vector3(0.0f, 0.0f, 0.0f);
                 //mm.plane.eulerAngles = new Vector3(90.0f, 0.0f, 0.0f);
@@ -1331,8 +1350,10 @@ public class GlobalConfiguration : MonoBehaviour
         }
 
         //save images
-        if (exportImage)
+        if (exportImage) {
+            textBox.text = statisticsLogger.GRAPH_DERECTORY;
             statisticsLogger.LogExperimentPathPictures(experimentIterator);
+        }
 
         //create temporary files to indicate the stage of the experiment
         File.WriteAllText(statisticsLogger.Get_TMP_DERECTORY() + @"\" + experimentSetupsListIterator + "-" + experimentSetupsList.Count + " " + experimentIterator + "-" + experimentSetups.Count + ".txt", "");
@@ -1354,11 +1375,15 @@ public class GlobalConfiguration : MonoBehaviour
             //initialize experiment results 
             statisticsLogger.InitializeExperimentResults();
 
+            if (movementController == MovementController.HMD) {
+                SceneManager.LoadScene("VR_Scene");
+                SceneManager.LoadScene(0);
+            }
 
             experimentSetupsListIterator++;
             if (experimentSetupsListIterator >= experimentSetupsList.Count)
             {
-                Debug.Log("Last Experiment Complete, experimentSetups.Count == " + experimentSetups.Count);
+                //Debug.Log("Last Experiment Complete, experimentSetups.Count == " + experimentSetups.Count);
                 experimentComplete = true;//all trials end
             }
             else

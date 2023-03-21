@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.XR.PXR;
 
 namespace SlimUI.ModernMenu{
 	public class MenuControls : MonoBehaviour {
@@ -93,6 +94,10 @@ namespace SlimUI.ModernMenu{
 			mainMenu.SetActive(true);
 
 			SetThemeColors();
+		}
+
+		void Awake() {
+            PXR_System.InitAudioDevice();
 		}
 
 		void SetThemeColors(){

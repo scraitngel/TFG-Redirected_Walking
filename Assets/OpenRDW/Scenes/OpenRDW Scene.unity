@@ -749,6 +749,7 @@ MonoBehaviour:
   useSimulationTime: 0
   overviewModeEveryTrial: 0
   firstPersonView: 0
+  textBox: {fileID: 870520022}
   MAX_TRANS_GAIN: 0.26
   MIN_TRANS_GAIN: -0.14
   MAX_ROT_GAIN: 0.49
@@ -756,6 +757,8 @@ MonoBehaviour:
   CURVATURE_RADIUS: 7.5
   RESET_TRIGGER_BUFFER: 0.5
   MOVEMENT_THRESHOLD: 1.4
+  MIN_TIME_SOUND: 2
+  MAX_TIME_SOUND: 5
   simulatedTime: 0
   targetFPS: 20
   trialsForRepeating: 1
@@ -788,8 +791,8 @@ MonoBehaviour:
   currentShownAvatarId: 0
   avatarIdSortedFromHighPriorityToLow: 
   virtualWorldVisible: 1
-  trackingSpaceVisible: 0
-  bufferVisible: 0
+  trackingSpaceVisible: 1
+  bufferVisible: 1
   if3dObstacle: 0
   trackingSpaceChoice: 7
   obstacleType: 0
@@ -860,6 +863,7 @@ MonoBehaviour:
   realSideLength: 40
   borderThickness: 8
   pathThickness: 14
+  virtualColor: {r: 0.24313727, g: 0.10980393, b: 0.9803922, a: 1}
   maxFrames: 1000
   frameRate: 30
   superSize: 1
@@ -1293,7 +1297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 043fbaff1ed472b47b0bd0a5acf6f259, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 0}
 --- !u!108 &232629216
 Light:
   m_ObjectHideFlags: 0
@@ -2236,7 +2239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: 14.999991}
+  m_AnchoredPosition: {x: -200, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &870520022
@@ -3878,7 +3881,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 359841035}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 2
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Choices : MonoBehaviour
 {
-    public Text textBox;
     public static string redirector = "";
     public static string resetter = "";
     public static string momentum = "";
@@ -21,7 +20,6 @@ public class Choices : MonoBehaviour
 
     public void chooseMoment (string option) {
         momentum = momentum + (momentum == "" ? option : " " + option);
-        if (textBox != null) textBox.text = momentum;
     }
 
     public void resetMomentChoices() {

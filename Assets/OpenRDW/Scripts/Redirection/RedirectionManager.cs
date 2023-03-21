@@ -131,7 +131,7 @@ public class RedirectionManager : MonoBehaviour
             }
         }
 
-        textBox.text = "Head: " + headMovement + " Blink: " + blinks + " Frames: " + frames + " Sound: " + sounds;
+        //textBox.text = "Head: " + headMovement + " Blink: " + blinks + " Frames: " + frames + " Sound: " + sounds;
     }
     void Awake()
     {
@@ -333,6 +333,7 @@ public class RedirectionManager : MonoBehaviour
     //make one step redirection: redirect or reset
     public void MakeOneStepRedirection()
     {
+        bool redirectionDone = false;
         time += Time.deltaTime;
 
         UpdateCurrentUserState();
@@ -380,9 +381,9 @@ public class RedirectionManager : MonoBehaviour
             if (redirector != null)
             {
                 if (sounds) {
-
+                    redirectionDone = true;
                 } 
-                if (blinks) {
+                if (blinks && !redirectionDone) {
                     if (!inBlink && time >= blinkInterval) {
                         inBlink = true;
                         blinkInterval = UnityEngine.Random.Range(5.0f, 6.0f);
@@ -393,6 +394,7 @@ public class RedirectionManager : MonoBehaviour
                     } else if (inBlink && time < blinkingTime) {
                         if (!justRedirected) redirector.InjectRedirection();
                         justRedirected = true;
+                        redirectionDone = true;
 
                     } else if (inBlink && time >= blinkingTime) {
                         time = 0.0f;
@@ -401,20 +403,21 @@ public class RedirectionManager : MonoBehaviour
                         blockingVisionObject.gameObject.SetActive(false);
                     }
                 } 
-                if (headMovement) {
+                if (headMovement && !redirectionDone) {
                     Vector3 look = headTransform.TransformDirection(Vector3.forward);
                     float angle = Vector3.Angle(lastLookdirection, look);
 
                     if (angle >= globalConfiguration.MOVEMENT_THRESHOLD) {
                         NRedirections++;
                         redirector.InjectRedirection();
+                        redirectionDone = true;
                     }
 
                     lastLookdirection = look;
 
                     //textBox.text = angle + " " + NRedirections;
                 } 
-                if (frames) {
+                if (frames && !redirectionDone) {
                     redirector.InjectRedirection();
                 }
             }
