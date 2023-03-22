@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 using System.IO;
 using System;
 using System.Collections;
@@ -86,7 +87,7 @@ public class RedirectionManager : MonoBehaviour
     public float walkDist = 0;//walked virtual distance
 
     [SerializeField]
-    public Text textBox;
+    public AudioSource sourceAudio;
 
     private NetworkManager networkManager;
 
@@ -181,6 +182,7 @@ public class RedirectionManager : MonoBehaviour
 
         blinkingTime = UnityEngine.Random.Range(0.05f, 0.1f); 
         blinkInterval = UnityEngine.Random.Range(5.0f, 6.0f);
+        soundInterval = UnityEngine.Random.Range(globalConfiguration.MIN_TIME_SOUND, globalConfiguration.MAX_TIME_SOUND);
         lastLookdirection = headTransform.TransformDirection(Vector3.forward);
     }
 
@@ -325,16 +327,16 @@ public class RedirectionManager : MonoBehaviour
             redirectionTime += globalConfiguration.GetDeltaTime();
     }
 
-    private float time = 0.0f, blinkingTime, blinkInterval;
-    private bool inBlink = false, justRedirected = false;
+    private float time = 0.0f, blinkingTime, blinkInterval, soundInterval, timeSound = 0.0f;
+    private bool inBlink = false, justRedirected = false, inSound = false;
     Vector3 lastLookdirection;
-    int NRedirections = 0;
 
     //make one step redirection: redirect or reset
     public void MakeOneStepRedirection()
     {
         bool redirectionDone = false;
         time += Time.deltaTime;
+        timeSound += Time.deltaTime;
 
         UpdateCurrentUserState();
 
@@ -381,7 +383,19 @@ public class RedirectionManager : MonoBehaviour
             if (redirector != null)
             {
                 if (sounds) {
-                    redirectionDone = true;
+                    if (sourceAudio.isPlaying) {
+                        redirector.InjectRedirection();
+                        redirectionDone = true;
+                    } else if (timeSound >= soundInterval) {
+                        if (!inSound) {
+                            inSound = true;
+                            sourceAudio.Play();
+                        } else {
+                            inSound = false;
+                            timeSound = 0.0f;
+                            soundInterval = UnityEngine.Random.Range(globalConfiguration.MIN_TIME_SOUND, globalConfiguration.MAX_TIME_SOUND);
+                        }
+                    }
                 } 
                 if (blinks && !redirectionDone) {
                     if (!inBlink && time >= blinkInterval) {
@@ -408,14 +422,11 @@ public class RedirectionManager : MonoBehaviour
                     float angle = Vector3.Angle(lastLookdirection, look);
 
                     if (angle >= globalConfiguration.MOVEMENT_THRESHOLD) {
-                        NRedirections++;
                         redirector.InjectRedirection();
                         redirectionDone = true;
                     }
 
                     lastLookdirection = look;
-
-                    //textBox.text = angle + " " + NRedirections;
                 } 
                 if (frames && !redirectionDone) {
                     redirector.InjectRedirection();

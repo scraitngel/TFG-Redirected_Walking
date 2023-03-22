@@ -1091,10 +1091,12 @@ struct BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E  : public RuntimeO
 	Encoder_tAF9067231A76315584BDF4CD27990E2F485A78FA* ____encoder_4;
 	// System.Boolean System.IO.BinaryWriter::_leaveOpen
 	bool ____leaveOpen_5;
+	// System.Char[] System.IO.BinaryWriter::_tmpOneCharBuffer
+	CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* ____tmpOneCharBuffer_6;
 	// System.Byte[] System.IO.BinaryWriter::_largeByteBuffer
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ____largeByteBuffer_6;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ____largeByteBuffer_7;
 	// System.Int32 System.IO.BinaryWriter::_maxChars
-	int32_t ____maxChars_7;
+	int32_t ____maxChars_8;
 };
 
 struct BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E_StaticFields
@@ -19520,7 +19522,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelWriter_Save_m0AA4DFDE021AD0B347BFB9
 		// writer.Write((long)Model.Version);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_0 = ___writer0;
 		NullCheck(L_0);
-		VirtualActionInvoker1< int64_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int64) */, L_0, ((int64_t)((int32_t)17)));
+		VirtualActionInvoker1< int64_t >::Invoke(21 /* System.Void System.IO.BinaryWriter::Write(System.Int64) */, L_0, ((int64_t)((int32_t)17)));
 		// writer.Write(model.inputs.Count);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_1 = ___writer0;
 		Model_t8F5B69764BF210D112B40801428554C916789420* L_2 = ___model1;
@@ -19530,7 +19532,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelWriter_Save_m0AA4DFDE021AD0B347BFB9
 		int32_t L_4;
 		L_4 = List_1_get_Count_m2A282B4E6E0FA6FEB7D10816520F79598ED1B2AC_inline(L_3, List_1_get_Count_m2A282B4E6E0FA6FEB7D10816520F79598ED1B2AC_RuntimeMethod_var);
 		NullCheck(L_1);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_1, L_4);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_1, L_4);
 		// for (var i = 0; i < model.inputs.Count; ++i)
 		V_2 = 0;
 		goto IL_0050;
@@ -19596,7 +19598,7 @@ IL_0050:
 		int32_t L_28;
 		L_28 = List_1_get_Count_mEAFC16F719778378E93E7868409EE8CFC8CDF3B0_inline(L_27, List_1_get_Count_mEAFC16F719778378E93E7868409EE8CFC8CDF3B0_RuntimeMethod_var);
 		NullCheck(L_25);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_25, L_28);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_25, L_28);
 		// for (var m = 0; m < model.memories.Count; ++m)
 		V_3 = 0;
 		goto IL_00d1;
@@ -19672,7 +19674,7 @@ IL_00d1:
 		int32_t L_56;
 		L_56 = List_1_get_Count_mA281E48954C93D9095BB6EC96A9A6C9EA658E3E6_inline(L_55, List_1_get_Count_mA281E48954C93D9095BB6EC96A9A6C9EA658E3E6_RuntimeMethod_var);
 		NullCheck(L_53);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_53, L_56);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_53, L_56);
 		// for (var l = 0; l < model.layers.Count; ++l)
 		V_5 = 0;
 		goto IL_03b7;
@@ -19701,22 +19703,22 @@ IL_00fb:
 		NullCheck(L_65);
 		int32_t L_66 = L_65->___type_1;
 		NullCheck(L_64);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_64, L_66);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_64, L_66);
 		// writer.Write((Int32)layer.activation);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_67 = ___writer0;
 		Layer_tBE26FB1C25BBB3C7FC90155DC2F06B3762BB28D4* L_68 = V_6;
 		NullCheck(L_68);
 		int32_t L_69 = L_68->___activation_3;
 		NullCheck(L_67);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_67, L_69);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_67, L_69);
 		// writer.Write(0); //dummy 0 size array
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_70 = ___writer0;
 		NullCheck(L_70);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_70, 0);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_70, 0);
 		// writer.Write(0); //dummy 0 size array
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_71 = ___writer0;
 		NullCheck(L_71);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_71, 0);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_71, 0);
 		// WriteInt32Array(writer, layer.pad);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_72 = ___writer0;
 		Layer_tBE26FB1C25BBB3C7FC90155DC2F06B3762BB28D4* L_73 = V_6;
@@ -19741,25 +19743,25 @@ IL_00fb:
 		NullCheck(L_82);
 		int32_t L_83 = L_82->___axis_7;
 		NullCheck(L_81);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_81, L_83);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_81, L_83);
 		// writer.Write(layer.alpha);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_84 = ___writer0;
 		Layer_tBE26FB1C25BBB3C7FC90155DC2F06B3762BB28D4* L_85 = V_6;
 		NullCheck(L_85);
 		float L_86 = L_85->___alpha_8;
 		NullCheck(L_84);
-		VirtualActionInvoker1< float >::Invoke(21 /* System.Void System.IO.BinaryWriter::Write(System.Single) */, L_84, L_86);
+		VirtualActionInvoker1< float >::Invoke(23 /* System.Void System.IO.BinaryWriter::Write(System.Single) */, L_84, L_86);
 		// writer.Write(layer.beta);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_87 = ___writer0;
 		Layer_tBE26FB1C25BBB3C7FC90155DC2F06B3762BB28D4* L_88 = V_6;
 		NullCheck(L_88);
 		float L_89 = L_88->___beta_9;
 		NullCheck(L_87);
-		VirtualActionInvoker1< float >::Invoke(21 /* System.Void System.IO.BinaryWriter::Write(System.Single) */, L_87, L_89);
+		VirtualActionInvoker1< float >::Invoke(23 /* System.Void System.IO.BinaryWriter::Write(System.Single) */, L_87, L_89);
 		// writer.Write(0); //dummy 0 size array
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_90 = ___writer0;
 		NullCheck(L_90);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_90, 0);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_90, 0);
 		// WriteStringArray(writer, layer.inputs);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_91 = ___writer0;
 		Layer_tBE26FB1C25BBB3C7FC90155DC2F06B3762BB28D4* L_92 = V_6;
@@ -19775,7 +19777,7 @@ IL_00fb:
 		DataSetU5BU5D_t2A81B13B284C5DBDC5829392C9F33DEDE7AD616E* L_96 = L_95->___datasets_13;
 		NullCheck(L_96);
 		NullCheck(L_94);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_94, ((int32_t)(((RuntimeArray*)L_96)->max_length)));
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_94, ((int32_t)(((RuntimeArray*)L_96)->max_length)));
 		// for (var i = 0; i < layer.datasets.Length; ++i)
 		V_8 = 0;
 		goto IL_024e;
@@ -19808,7 +19810,7 @@ IL_01bc:
 		int64_t L_109 = V_0;
 		int64_t L_110 = V_7;
 		NullCheck(L_108);
-		VirtualActionInvoker1< int64_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int64) */, L_108, ((int64_t)il2cpp_codegen_add(L_109, L_110)));
+		VirtualActionInvoker1< int64_t >::Invoke(21 /* System.Void System.IO.BinaryWriter::Write(System.Int64) */, L_108, ((int64_t)il2cpp_codegen_add(L_109, L_110)));
 		// writer.Write(layer.datasets[i].itemSizeInBytes);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_111 = ___writer0;
 		Layer_tBE26FB1C25BBB3C7FC90155DC2F06B3762BB28D4* L_112 = V_6;
@@ -19818,7 +19820,7 @@ IL_01bc:
 		NullCheck(L_113);
 		int32_t L_115 = ((L_113)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_114)))->___itemSizeInBytes_3;
 		NullCheck(L_111);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_111, L_115);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_111, L_115);
 		// writer.Write(layer.datasets[i].length);
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_116 = ___writer0;
 		Layer_tBE26FB1C25BBB3C7FC90155DC2F06B3762BB28D4* L_117 = V_6;
@@ -19828,7 +19830,7 @@ IL_01bc:
 		NullCheck(L_118);
 		int32_t L_120 = ((L_118)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_119)))->___length_4;
 		NullCheck(L_116);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_116, L_120);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_116, L_120);
 		// offsetFromLayerStart += layer.datasets[i].length;
 		int64_t L_121 = V_7;
 		Layer_tBE26FB1C25BBB3C7FC90155DC2F06B3762BB28D4* L_122 = V_6;
@@ -20154,7 +20156,7 @@ IL_03d6:
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_218 = ___writer0;
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_219 = V_15;
 		NullCheck(L_218);
-		VirtualActionInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* >::Invoke(10 /* System.Void System.IO.BinaryWriter::Write(System.Byte[]) */, L_218, L_219);
+		VirtualActionInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* >::Invoke(12 /* System.Void System.IO.BinaryWriter::Write(System.Byte[]) */, L_218, L_219);
 		// for (var d = 0; d < model.layers[l].datasets.Length; ++d)
 		int32_t L_220 = V_14;
 		V_14 = ((int32_t)il2cpp_codegen_add(L_220, 1));
@@ -20232,7 +20234,7 @@ IL_046c:
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_244 = ___writer0;
 		int32_t L_245 = V_1;
 		NullCheck(L_244);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_244, L_245);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_244, L_245);
 		// for (var i = 0; i < numWarnings; ++i)
 		V_16 = 0;
 		goto IL_04f0;
@@ -20298,7 +20300,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelWriter_WriteInt32Array_m7831095849F
 		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_1 = ___arr1;
 		NullCheck(L_1);
 		NullCheck(L_0);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_0, ((int32_t)(((RuntimeArray*)L_1)->max_length)));
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_0, ((int32_t)(((RuntimeArray*)L_1)->max_length)));
 		// for (var i = 0; i < arr.Length; ++i)
 		V_0 = 0;
 		goto IL_001a;
@@ -20314,7 +20316,7 @@ IL_000d:
 		int32_t L_5 = L_4;
 		int32_t L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
 		NullCheck(L_2);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_2, L_6);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_2, L_6);
 		// for (var i = 0; i < arr.Length; ++i)
 		int32_t L_7 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_7, 1));
@@ -20347,7 +20349,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelWriter_WriteString_m1A3D46CC7EF230C
 		int32_t L_2;
 		L_2 = String_get_Length_m42625D67623FA5CC7A44D47425CE86FB946542D2_inline(L_1, NULL);
 		NullCheck(L_0);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_0, L_2);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_0, L_2);
 		// writer.Write(str.ToCharArray());
 		BinaryWriter_tFB94D67EDFA3F6A34744A163BDABE287FDF2ED1E* L_3 = ___writer0;
 		String_t* L_4 = ___str1;
@@ -20355,7 +20357,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelWriter_WriteString_m1A3D46CC7EF230C
 		CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* L_5;
 		L_5 = String_ToCharArray_m0699A92AA3E744229EF29CB9D943C47DF4FE5B46(L_4, NULL);
 		NullCheck(L_3);
-		VirtualActionInvoker1< CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* >::Invoke(13 /* System.Void System.IO.BinaryWriter::Write(System.Char[]) */, L_3, L_5);
+		VirtualActionInvoker1< CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* >::Invoke(15 /* System.Void System.IO.BinaryWriter::Write(System.Char[]) */, L_3, L_5);
 		// }
 		return;
 	}
@@ -20372,7 +20374,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelWriter_WriteStringArray_m5AB3193888
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_1 = ___strArray1;
 		NullCheck(L_1);
 		NullCheck(L_0);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_0, ((int32_t)(((RuntimeArray*)L_1)->max_length)));
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_0, ((int32_t)(((RuntimeArray*)L_1)->max_length)));
 		// foreach(string str in strArray)
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_2 = ___strArray1;
 		V_0 = L_2;
@@ -20437,7 +20439,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ModelWriter_WriteStringArray_m63B8376AAB
 		int32_t L_2;
 		L_2 = List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_inline(L_1, List_1_get_Count_mB63183A9151F4345A9DD444A7CBE0D6E03F77C7C_RuntimeMethod_var);
 		NullCheck(L_0);
-		VirtualActionInvoker1< int32_t >::Invoke(17 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_0, L_2);
+		VirtualActionInvoker1< int32_t >::Invoke(19 /* System.Void System.IO.BinaryWriter::Write(System.Int32) */, L_0, L_2);
 		// foreach(string str in strArray)
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_3 = ___strArray1;
 		NullCheck(L_3);

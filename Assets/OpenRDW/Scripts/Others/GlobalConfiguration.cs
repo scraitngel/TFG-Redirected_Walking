@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System.Net.Mail;
+using System.Data;
+using System.Reflection;
 using System.Security;
 using System.Net.Http;
 using System.Net.Mime;
@@ -13,6 +15,7 @@ using UnityEngine.UI;
 using Unity.XR.PXR;
 using mattatz.Triangulation2DSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 //Store common parameters 
 public class GlobalConfiguration : MonoBehaviour
@@ -1107,20 +1110,28 @@ public class GlobalConfiguration : MonoBehaviour
 
                 mm.GenerateTrackingSpaceMesh(trackingSpacePoints, obstaclePolygons);
 
-                /*Mesh mesh = mm.plane.GetComponent<MeshFilter>().mesh;
-                Vector3[] vert = mesh.vertices;
+                Mesh mesh = mm.plane.GetComponent<MeshFilter>().mesh;
+                List<Vector3> vert = new List<Vector3>();
+                mesh.GetVertices(vert);
                 mesh.Clear();
 
-                Mesh subMesh = mesh.GetSubMesh(0);
-                Vector3[] vetSub = subMesh.vertices;
+                //int[] subIndex = mesh.GetIndices(0);
 
-                foreach (Vector3 v in vetSub) {
+                SubMeshDescriptor subMesh = mesh.GetSubMesh(0);
+                vert.RemoveRange(subMesh.firstVertex, subMesh.vertexCount);
+                mesh.SetVertices(vert);
+                mesh.vertices = vert.ToArray();
+                mesh.RecalculateBounds();
+
+                /*foreach (Vector3 v in vetSub) {
                     int i = vert.Find(v);
                     if (i != -1) vert.RemoveAt(i);
                 }
 
-                mesh.vertices = vert;
-                mm.plane.GetComponent<MeshFilter>().mesh = mesh;*/
+                foreach (int i in subIndex) {
+                    vert.RemoveAt(i);
+                }*/
+                mm.plane.GetComponent<MeshFilter>().mesh = mesh;
 
                 //mm.plane.position = new Vector3(0.0f, 0.0f, 0.0f);
                 //mm.plane.eulerAngles = new Vector3(90.0f, 0.0f, 0.0f);
@@ -1351,9 +1362,13 @@ public class GlobalConfiguration : MonoBehaviour
 
         //save images
         if (exportImage) {
-            textBox.text = statisticsLogger.GRAPH_DERECTORY;
             statisticsLogger.LogExperimentPathPictures(experimentIterator);
         }
+
+        GetResultDirAndFileName(statisticsLogger.SUMMARY_STATISTICS_DIRECTORY, out string resultDirR, out string fileNameR);
+        statisticsLogger.LogExperimentSummaryStatisticsResultsSCSV(statisticsLogger.experimentResults, resultDirR, fileNameR);
+
+        SceneManager.LoadSceneAsync("VR_Scene");
 
         //create temporary files to indicate the stage of the experiment
         File.WriteAllText(statisticsLogger.Get_TMP_DERECTORY() + @"\" + experimentSetupsListIterator + "-" + experimentSetupsList.Count + " " + experimentIterator + "-" + experimentSetups.Count + ".txt", "");
@@ -1374,11 +1389,6 @@ public class GlobalConfiguration : MonoBehaviour
 
             //initialize experiment results 
             statisticsLogger.InitializeExperimentResults();
-
-            if (movementController == MovementController.HMD) {
-                SceneManager.LoadScene("VR_Scene");
-                SceneManager.LoadScene(0);
-            }
 
             experimentSetupsListIterator++;
             if (experimentSetupsListIterator >= experimentSetupsList.Count)
