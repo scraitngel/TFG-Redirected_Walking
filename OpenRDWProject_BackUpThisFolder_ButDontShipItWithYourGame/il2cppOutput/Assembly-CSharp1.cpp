@@ -269,8 +269,6 @@ struct StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4;
 struct String_t;
 // Unity.Barracuda.Tensor
 struct Tensor_t9B89EEE59F673A469027FF5E441797C2E247AF10;
-// UnityEngine.UI.Text
-struct Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62;
 // UnityEngine.Texture
 struct Texture_t791CBB51219779964E0E8A2ED7C1AA5F92A4A700;
 // UnityEngine.Texture2D
@@ -1806,164 +1804,162 @@ struct GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D  : public M
 	bool ___firstPersonView_16;
 	// System.Boolean GlobalConfiguration::firstPersonViewOldChoice
 	bool ___firstPersonViewOldChoice_17;
-	// UnityEngine.UI.Text GlobalConfiguration::textBox
-	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___textBox_18;
 	// System.Single GlobalConfiguration::MAX_TRANS_GAIN
-	float ___MAX_TRANS_GAIN_19;
+	float ___MAX_TRANS_GAIN_18;
 	// System.Single GlobalConfiguration::MIN_TRANS_GAIN
-	float ___MIN_TRANS_GAIN_20;
+	float ___MIN_TRANS_GAIN_19;
 	// System.Single GlobalConfiguration::MAX_ROT_GAIN
-	float ___MAX_ROT_GAIN_21;
+	float ___MAX_ROT_GAIN_20;
 	// System.Single GlobalConfiguration::MIN_ROT_GAIN
-	float ___MIN_ROT_GAIN_22;
+	float ___MIN_ROT_GAIN_21;
 	// System.Single GlobalConfiguration::CURVATURE_RADIUS
-	float ___CURVATURE_RADIUS_23;
+	float ___CURVATURE_RADIUS_22;
 	// System.Single GlobalConfiguration::RESET_TRIGGER_BUFFER
-	float ___RESET_TRIGGER_BUFFER_24;
+	float ___RESET_TRIGGER_BUFFER_23;
 	// System.Single GlobalConfiguration::MOVEMENT_THRESHOLD
-	float ___MOVEMENT_THRESHOLD_25;
+	float ___MOVEMENT_THRESHOLD_24;
 	// System.Single GlobalConfiguration::MIN_TIME_SOUND
-	float ___MIN_TIME_SOUND_26;
+	float ___MIN_TIME_SOUND_25;
 	// System.Single GlobalConfiguration::MAX_TIME_SOUND
-	float ___MAX_TIME_SOUND_27;
+	float ___MAX_TIME_SOUND_26;
 	// System.Single GlobalConfiguration::simulatedTime
-	float ___simulatedTime_28;
+	float ___simulatedTime_27;
 	// System.Single GlobalConfiguration::targetFPS
-	float ___targetFPS_29;
+	float ___targetFPS_28;
 	// System.Int32 GlobalConfiguration::trialsForRepeating
-	int32_t ___trialsForRepeating_30;
+	int32_t ___trialsForRepeating_29;
 	// System.Collections.Generic.List`1<ExperimentSetup> GlobalConfiguration::experimentSetups
-	List_1_t32CC5CC2429AD251993FE646C25FF03D3119CB2B* ___experimentSetups_31;
+	List_1_t32CC5CC2429AD251993FE646C25FF03D3119CB2B* ___experimentSetups_30;
 	// System.Collections.Generic.List`1<System.Collections.Generic.List`1<ExperimentSetup>> GlobalConfiguration::experimentSetupsList
-	List_1_tAD94D0A6061A4619100082982160A2BF7440FBC6* ___experimentSetupsList_32;
+	List_1_tAD94D0A6061A4619100082982160A2BF7440FBC6* ___experimentSetupsList_31;
 	// System.Int32 GlobalConfiguration::trialsForCurrentExperiment
-	int32_t ___trialsForCurrentExperiment_33;
+	int32_t ___trialsForCurrentExperiment_32;
 	// System.Int32 GlobalConfiguration::experimentIterator
-	int32_t ___experimentIterator_34;
+	int32_t ___experimentIterator_33;
 	// System.Int32 GlobalConfiguration::experimentSetupsListIterator
-	int32_t ___experimentSetupsListIterator_35;
+	int32_t ___experimentSetupsListIterator_34;
 	// System.Boolean GlobalConfiguration::experimentComplete
-	bool ___experimentComplete_36;
+	bool ___experimentComplete_35;
 	// System.Boolean GlobalConfiguration::experimentInProgress
-	bool ___experimentInProgress_37;
+	bool ___experimentInProgress_36;
 	// System.Boolean GlobalConfiguration::avatarIsWalking
-	bool ___avatarIsWalking_38;
+	bool ___avatarIsWalking_37;
 	// System.String GlobalConfiguration::startTimeOfProgram
-	String_t* ___startTimeOfProgram_39;
+	String_t* ___startTimeOfProgram_38;
 	// UnityEngine.GameObject GlobalConfiguration::negArrow
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___negArrow_40;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___negArrow_39;
 	// System.Boolean GlobalConfiguration::readyToStart
-	bool ___readyToStart_41;
+	bool ___readyToStart_40;
 	// System.Boolean GlobalConfiguration::firstTime
-	bool ___firstTime_42;
+	bool ___firstTime_41;
 	// System.Boolean GlobalConfiguration::firstTimePressR
-	bool ___firstTimePressR_43;
+	bool ___firstTimePressR_42;
 	// System.Int32 GlobalConfiguration::avatarNum
-	int32_t ___avatarNum_44;
+	int32_t ___avatarNum_43;
 	// UnityEngine.Color[] GlobalConfiguration::avatarColors
-	ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* ___avatarColors_45;
+	ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* ___avatarColors_44;
 	// System.Int32 GlobalConfiguration::avatarPrefabId
-	int32_t ___avatarPrefabId_46;
+	int32_t ___avatarPrefabId_45;
 	// UnityEngine.GameObject[] GlobalConfiguration::avatarPrefabs
-	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___avatarPrefabs_47;
+	GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* ___avatarPrefabs_46;
 	// UnityEngine.RuntimeAnimatorController GlobalConfiguration::animatorController
-	RuntimeAnimatorController_t6F7C753402B42EC23C163099CF935C5E0D7A7254* ___animatorController_48;
+	RuntimeAnimatorController_t6F7C753402B42EC23C163099CF935C5E0D7A7254* ___animatorController_47;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> GlobalConfiguration::redirectedAvatars
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___redirectedAvatars_49;
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___redirectedAvatars_48;
 	// System.Single GlobalConfiguration::translationSpeed
-	float ___translationSpeed_50;
+	float ___translationSpeed_49;
 	// System.Single GlobalConfiguration::rotationSpeed
-	float ___rotationSpeed_51;
+	float ___rotationSpeed_50;
 	// System.Int32 GlobalConfiguration::currentShownAvatarId
-	int32_t ___currentShownAvatarId_52;
+	int32_t ___currentShownAvatarId_51;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> GlobalConfiguration::avatarRepresentations
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___avatarRepresentations_53;
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___avatarRepresentations_52;
 	// System.Collections.Generic.List`1<System.Int32> GlobalConfiguration::avatarIdSortedFromHighPriorityToLow
-	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___avatarIdSortedFromHighPriorityToLow_54;
+	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___avatarIdSortedFromHighPriorityToLow_53;
 	// System.Boolean GlobalConfiguration::virtualWorldVisible
-	bool ___virtualWorldVisible_55;
+	bool ___virtualWorldVisible_54;
 	// System.Boolean GlobalConfiguration::virtualWorldVisibleOldChoice
-	bool ___virtualWorldVisibleOldChoice_56;
+	bool ___virtualWorldVisibleOldChoice_55;
 	// System.Boolean GlobalConfiguration::trackingSpaceVisible
-	bool ___trackingSpaceVisible_57;
+	bool ___trackingSpaceVisible_56;
 	// System.Boolean GlobalConfiguration::trackingSpaceVisibleOldChoice
-	bool ___trackingSpaceVisibleOldChoice_58;
+	bool ___trackingSpaceVisibleOldChoice_57;
 	// System.Boolean GlobalConfiguration::bufferVisible
-	bool ___bufferVisible_59;
+	bool ___bufferVisible_58;
 	// System.Boolean GlobalConfiguration::bufferVisibleOldChoice
-	bool ___bufferVisibleOldChoice_60;
+	bool ___bufferVisibleOldChoice_59;
 	// System.Boolean GlobalConfiguration::if3dObstacle
-	bool ___if3dObstacle_61;
+	bool ___if3dObstacle_60;
 	// GlobalConfiguration/TrackingSpaceChoice GlobalConfiguration::trackingSpaceChoice
-	int32_t ___trackingSpaceChoice_62;
+	int32_t ___trackingSpaceChoice_61;
 	// System.Int32 GlobalConfiguration::obstacleType
-	int32_t ___obstacleType_63;
+	int32_t ___obstacleType_62;
 	// System.Single GlobalConfiguration::obstacleHeight
-	float ___obstacleHeight_64;
+	float ___obstacleHeight_63;
 	// System.String GlobalConfiguration::trackingSpaceFilePath
-	String_t* ___trackingSpaceFilePath_65;
+	String_t* ___trackingSpaceFilePath_64;
 	// System.Single GlobalConfiguration::squareWidth
-	float ___squareWidth_66;
+	float ___squareWidth_65;
 	// UnityEngine.Color GlobalConfiguration::obstacleColor
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___obstacleColor_67;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___obstacleColor_66;
 	// UnityEngine.Color GlobalConfiguration::bufferColor
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bufferColor_68;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___bufferColor_67;
 	// System.Collections.Generic.List`1<UnityEngine.Vector2> GlobalConfiguration::trackingSpacePoints
-	List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* ___trackingSpacePoints_69;
+	List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* ___trackingSpacePoints_68;
 	// System.Collections.Generic.List`1<System.Collections.Generic.List`1<UnityEngine.Vector2>> GlobalConfiguration::obstaclePolygons
-	List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* ___obstaclePolygons_70;
+	List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* ___obstaclePolygons_69;
 	// UnityEngine.Material GlobalConfiguration::transparentMat
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___transparentMat_71;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___transparentMat_70;
 	// UnityEngine.Material GlobalConfiguration::trackingSpacePlaneMat
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___trackingSpacePlaneMat_72;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___trackingSpacePlaneMat_71;
 	// UnityEngine.GameObject GlobalConfiguration::planeForAllAvatar
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeForAllAvatar_73;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___planeForAllAvatar_72;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> GlobalConfiguration::bufferRepresentations
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___bufferRepresentations_74;
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___bufferRepresentations_73;
 	// UnityEngine.GameObject GlobalConfiguration::virtualWorld
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___virtualWorld_75;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___virtualWorld_74;
 	// System.Boolean GlobalConfiguration::firstWayPointIsStartPoint
-	bool ___firstWayPointIsStartPoint_76;
+	bool ___firstWayPointIsStartPoint_75;
 	// System.Boolean GlobalConfiguration::alignToInitialForward
-	bool ___alignToInitialForward_77;
+	bool ___alignToInitialForward_76;
 	// System.Boolean GlobalConfiguration::drawRealTrail
-	bool ___drawRealTrail_78;
+	bool ___drawRealTrail_77;
 	// System.Boolean GlobalConfiguration::drawVirtualTrail
-	bool ___drawVirtualTrail_79;
+	bool ___drawVirtualTrail_78;
 	// System.Single GlobalConfiguration::distanceToWaypointThreshold
-	float ___distanceToWaypointThreshold_80;
+	float ___distanceToWaypointThreshold_79;
 	// System.Int32 GlobalConfiguration::trailVisualTime
-	int32_t ___trailVisualTime_81;
+	int32_t ___trailVisualTime_80;
 	// UnityEngine.Color GlobalConfiguration::realTrailColor
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___realTrailColor_82;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___realTrailColor_81;
 	// UnityEngine.Color GlobalConfiguration::virtualTrailColor
-	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___virtualTrailColor_83;
+	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___virtualTrailColor_82;
 	// System.Collections.Generic.Dictionary`2<GlobalConfiguration/PathSeedChoice,System.Collections.Generic.List`1<UnityEngine.Vector2>> GlobalConfiguration::pathSeedChoiceToWaypoints
-	Dictionary_2_tAE8DC92D1A5D37D8B5D2B627FEDB3C7F00289AB7* ___pathSeedChoiceToWaypoints_84;
+	Dictionary_2_tAE8DC92D1A5D37D8B5D2B627FEDB3C7F00289AB7* ___pathSeedChoiceToWaypoints_83;
 	// System.Collections.Generic.List`1<System.Collections.Generic.List`1<TrailDrawer/Vertice>> GlobalConfiguration::realTrailPoints
-	List_1_tBC0FD62990DBF08451FD5EE495C04BC65E72E662* ___realTrailPoints_85;
+	List_1_tBC0FD62990DBF08451FD5EE495C04BC65E72E662* ___realTrailPoints_84;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> GlobalConfiguration::realTrailList
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___realTrailList_86;
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___realTrailList_85;
 	// System.Boolean GlobalConfiguration::exportImage
-	bool ___exportImage_87;
+	bool ___exportImage_86;
 	// System.Boolean GlobalConfiguration::exportVideo
-	bool ___exportVideo_88;
+	bool ___exportVideo_87;
 	// StatisticsLogger GlobalConfiguration::statisticsLogger
-	StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* ___statisticsLogger_89;
+	StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* ___statisticsLogger_88;
 	// System.Boolean GlobalConfiguration::passiveHaptics
-	bool ___passiveHaptics_90;
+	bool ___passiveHaptics_89;
 	// System.Collections.Generic.List`1<GlobalConfiguration/PhysicalTargetTransform> GlobalConfiguration::physicalTargetTransforms
-	List_1_tD5B7747547963A1B643A8ACB70217FE66F7AC3A5* ___physicalTargetTransforms_91;
+	List_1_tD5B7747547963A1B643A8ACB70217FE66F7AC3A5* ___physicalTargetTransforms_90;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> GlobalConfiguration::physicalTargets
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___physicalTargets_92;
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___physicalTargets_91;
 	// System.Boolean GlobalConfiguration::networkingMode
-	bool ___networkingMode_93;
+	bool ___networkingMode_92;
 	// NetworkManager GlobalConfiguration::networkManager
-	NetworkManager_t34FC479255EC74DE917E6E400B1430EBE2CCA7CB* ___networkManager_94;
+	NetworkManager_t34FC479255EC74DE917E6E400B1430EBE2CCA7CB* ___networkManager_93;
 	// UnityEngine.Camera GlobalConfiguration::cameraVirtualTopForAllAvatars
-	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___cameraVirtualTopForAllAvatars_95;
+	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___cameraVirtualTopForAllAvatars_94;
 	// UserInterfaceManager GlobalConfiguration::userInterfaceManager
-	UserInterfaceManager_tE06C0618D43FED6C12B1E33820BAAEEAB1A8E1FA* ___userInterfaceManager_96;
+	UserInterfaceManager_tE06C0618D43FED6C12B1E33820BAAEEAB1A8E1FA* ___userInterfaceManager_95;
 };
 
 struct GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D_StaticFields
@@ -13116,10 +13112,10 @@ IL_013f:
 		// soundInterval = UnityEngine.Random.Range(globalConfiguration.MIN_TIME_SOUND, globalConfiguration.MAX_TIME_SOUND);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_33 = __this->___globalConfiguration_11;
 		NullCheck(L_33);
-		float L_34 = L_33->___MIN_TIME_SOUND_26;
+		float L_34 = L_33->___MIN_TIME_SOUND_25;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_35 = __this->___globalConfiguration_11;
 		NullCheck(L_35);
-		float L_36 = L_35->___MAX_TIME_SOUND_27;
+		float L_36 = L_35->___MAX_TIME_SOUND_26;
 		float L_37;
 		L_37 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494(L_34, L_36, NULL);
 		__this->___soundInterval_48 = L_37;
@@ -14513,7 +14509,7 @@ IL_003a:
 		// if (globalConfiguration.networkingMode && movementManager.avatarId != networkManager.avatarId)
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_6 = __this->___globalConfiguration_11;
 		NullCheck(L_6);
-		bool L_7 = L_6->___networkingMode_93;
+		bool L_7 = L_6->___networkingMode_92;
 		if (!L_7)
 		{
 			goto IL_0060;
@@ -14572,7 +14568,7 @@ IL_0060:
 		float L_19 = __this->___samePosTime_10;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_20 = __this->___globalConfiguration_11;
 		NullCheck(L_20);
-		float L_21 = L_20->___targetFPS_29;
+		float L_21 = L_20->___targetFPS_28;
 		__this->___samePosTime_10 = ((float)il2cpp_codegen_add(L_19, ((float)((1.0f)/L_21))));
 		goto IL_00b9;
 	}
@@ -14741,10 +14737,10 @@ IL_0194:
 		// soundInterval = UnityEngine.Random.Range(globalConfiguration.MIN_TIME_SOUND, globalConfiguration.MAX_TIME_SOUND);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_44 = __this->___globalConfiguration_11;
 		NullCheck(L_44);
-		float L_45 = L_44->___MIN_TIME_SOUND_26;
+		float L_45 = L_44->___MIN_TIME_SOUND_25;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_46 = __this->___globalConfiguration_11;
 		NullCheck(L_46);
-		float L_47 = L_46->___MAX_TIME_SOUND_27;
+		float L_47 = L_46->___MAX_TIME_SOUND_26;
 		float L_48;
 		L_48 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494(L_45, L_47, NULL);
 		__this->___soundInterval_48 = L_48;
@@ -14918,7 +14914,7 @@ IL_02c3:
 		// if (angle >= globalConfiguration.MOVEMENT_THRESHOLD) {
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_79 = __this->___globalConfiguration_11;
 		NullCheck(L_79);
-		float L_80 = L_79->___MOVEMENT_THRESHOLD_25;
+		float L_80 = L_79->___MOVEMENT_THRESHOLD_24;
 		if ((!(((float)L_78) >= ((float)L_80))))
 		{
 			goto IL_0305;
@@ -15613,7 +15609,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RedirectionManager_OnResetTrigger_m3CD6F
 		// globalConfiguration.statisticsLogger.Event_Reset_Triggered(movementManager.avatarId);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_1 = __this->___globalConfiguration_11;
 		NullCheck(L_1);
-		StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* L_2 = L_1->___statisticsLogger_89;
+		StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* L_2 = L_1->___statisticsLogger_88;
 		MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* L_3 = __this->___movementManager_18;
 		NullCheck(L_3);
 		int32_t L_4 = L_3->___avatarId_4;
@@ -15909,7 +15905,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void APF_Redirector_UpdateTotalForcePointer_m
 		NullCheck(L_8);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_9 = L_8->___globalConfiguration_11;
 		NullCheck(L_9);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = L_9->___negArrow_40;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = L_9->___negArrow_39;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11;
 		L_11 = Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m10D87C6E0708CA912BBB02555BF7D0FBC5D7A2B3(L_10, Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m10D87C6E0708CA912BBB02555BF7D0FBC5D7A2B3_RuntimeMethod_var);
@@ -16142,13 +16138,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DeepLearning_Redirector_InjectRedirectio
 		NullCheck(L_0);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_1 = L_0->___globalConfiguration_11;
 		NullCheck(L_1);
-		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_70;
+		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_69;
 		// var trackingSpacePoints = redirectionManager.globalConfiguration.trackingSpacePoints;
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_3 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
 		NullCheck(L_3);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_4 = L_3->___globalConfiguration_11;
 		NullCheck(L_4);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_69;
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_68;
 		// var userTransforms = redirectionManager.globalConfiguration.GetAvatarTransforms();
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_6 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
 		NullCheck(L_6);
@@ -16171,7 +16167,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DeepLearning_Redirector_InjectRedirectio
 		NullCheck(L_10);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_11 = L_10->___globalConfiguration_11;
 		NullCheck(L_11);
-		int32_t* L_12 = (&L_11->___trackingSpaceChoice_62);
+		int32_t* L_12 = (&L_11->___trackingSpaceChoice_61);
 		int32_t L_13 = 7;
 		RuntimeObject* L_14 = Box(TrackingSpaceChoice_t9542B6C6328C2D657C0AF3F27EFB5D35E36E8D5A_il2cpp_TypeInfo_var, &L_13);
 		Il2CppFakeBox<int32_t> L_15(TrackingSpaceChoice_t9542B6C6328C2D657C0AF3F27EFB5D35E36E8D5A_il2cpp_TypeInfo_var, L_12);
@@ -16188,7 +16184,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DeepLearning_Redirector_InjectRedirectio
 		NullCheck(L_17);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_18 = L_17->___globalConfiguration_11;
 		NullCheck(L_18);
-		float L_19 = L_18->___squareWidth_66;
+		float L_19 = L_18->___squareWidth_65;
 		V_7 = L_19;
 		goto IL_00a7;
 	}
@@ -16513,10 +16509,10 @@ IL_0273:
 		// g_t = Convert(-1, 1, gm.MIN_TRANS_GAIN, gm.MAX_TRANS_GAIN, g_t);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_106 = V_3;
 		NullCheck(L_106);
-		float L_107 = L_106->___MIN_TRANS_GAIN_20;
+		float L_107 = L_106->___MIN_TRANS_GAIN_19;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_108 = V_3;
 		NullCheck(L_108);
-		float L_109 = L_108->___MAX_TRANS_GAIN_19;
+		float L_109 = L_108->___MAX_TRANS_GAIN_18;
 		float L_110 = V_0;
 		float L_111;
 		L_111 = DeepLearning_Redirector_Convert_mF96A3EE8D9C8796752DC2129181D72932636378B(__this, (-1.0f), (1.0f), L_107, L_109, L_110, NULL);
@@ -16524,10 +16520,10 @@ IL_0273:
 		// g_r = Convert(-1, 1, gm.MIN_ROT_GAIN, gm.MAX_ROT_GAIN, g_r);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_112 = V_3;
 		NullCheck(L_112);
-		float L_113 = L_112->___MIN_ROT_GAIN_22;
+		float L_113 = L_112->___MIN_ROT_GAIN_21;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_114 = V_3;
 		NullCheck(L_114);
-		float L_115 = L_114->___MAX_ROT_GAIN_21;
+		float L_115 = L_114->___MAX_ROT_GAIN_20;
 		float L_116 = V_1;
 		float L_117;
 		L_117 = DeepLearning_Redirector_Convert_mF96A3EE8D9C8796752DC2129181D72932636378B(__this, (-1.0f), (1.0f), L_113, L_115, L_116, NULL);
@@ -16535,10 +16531,10 @@ IL_0273:
 		// g_c = Convert(-1, 1, -1 / gm.CURVATURE_RADIUS, 1 / gm.CURVATURE_RADIUS, g_c);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_118 = V_3;
 		NullCheck(L_118);
-		float L_119 = L_118->___CURVATURE_RADIUS_23;
+		float L_119 = L_118->___CURVATURE_RADIUS_22;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_120 = V_3;
 		NullCheck(L_120);
-		float L_121 = L_120->___CURVATURE_RADIUS_23;
+		float L_121 = L_120->___CURVATURE_RADIUS_22;
 		float L_122 = V_2;
 		float L_123;
 		L_123 = DeepLearning_Redirector_Convert_mF96A3EE8D9C8796752DC2129181D72932636378B(__this, (-1.0f), (1.0f), ((float)((-1.0f)/L_119)), ((float)((1.0f)/L_121)), L_122, NULL);
@@ -16741,14 +16737,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DynamicAPF_Redirector_InjectRedirection_
 		NullCheck(L_0);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_1 = L_0->___globalConfiguration_11;
 		NullCheck(L_1);
-		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_70;
+		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_69;
 		V_0 = L_2;
 		// var trackingSpacePoints = redirectionManager.globalConfiguration.trackingSpacePoints;
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_3 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
 		NullCheck(L_3);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_4 = L_3->___globalConfiguration_11;
 		NullCheck(L_4);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_69;
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_68;
 		V_1 = L_5;
 		// var userTransforms = redirectionManager.globalConfiguration.GetAvatarTransforms();
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_6 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
@@ -18766,7 +18762,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DynamicAPF_Redirector_ApplyRedirectionBy
 		float L_24 = V_8;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_25 = V_7;
 		NullCheck(L_25);
-		float L_26 = L_25->___CURVATURE_RADIUS_23;
+		float L_26 = L_25->___CURVATURE_RADIUS_22;
 		V_9 = ((float)(((float)il2cpp_codegen_multiply((360.0f), L_24))/((float)il2cpp_codegen_multiply((6.28318548f), L_26))));
 		// var distToObstacle = Utilities.GetNearestDistToObstacleAndTrackingSpace(obstaclePolygons, trackingSpacePoints, redirectionManager.currPosReal);
 		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_27 = ___obstaclePolygons1;
@@ -18783,7 +18779,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DynamicAPF_Redirector_ApplyRedirectionBy
 		float L_33 = V_10;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_34 = V_7;
 		NullCheck(L_34);
-		float L_35 = L_34->___CURVATURE_RADIUS_23;
+		float L_35 = L_34->___CURVATURE_RADIUS_22;
 		if ((!(((float)L_33) < ((float)L_35))))
 		{
 			goto IL_010e;
@@ -18800,7 +18796,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DynamicAPF_Redirector_ApplyRedirectionBy
 		float L_38 = V_13;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_39 = V_7;
 		NullCheck(L_39);
-		float L_40 = L_39->___CURVATURE_RADIUS_23;
+		float L_40 = L_39->___CURVATURE_RADIUS_22;
 		V_14 = ((float)il2cpp_codegen_subtract((1.0f), ((float)(L_38/L_40))));
 		// var appliedSteeringRate = (1 - t) * h + t * M;
 		float L_41 = V_14;
@@ -18842,7 +18838,7 @@ IL_010e:
 		NullCheck(L_56);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_57 = L_56->___globalConfiguration_11;
 		NullCheck(L_57);
-		float L_58 = L_57->___MIN_ROT_GAIN_22;
+		float L_58 = L_57->___MIN_ROT_GAIN_21;
 		float L_59;
 		L_59 = fabsf(((float)il2cpp_codegen_multiply(L_55, L_58)));
 		float L_60 = V_4;
@@ -18864,7 +18860,7 @@ IL_0169:
 		NullCheck(L_66);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_67 = L_66->___globalConfiguration_11;
 		NullCheck(L_67);
-		float L_68 = L_67->___MAX_ROT_GAIN_21;
+		float L_68 = L_67->___MAX_ROT_GAIN_20;
 		float L_69;
 		L_69 = fabsf(((float)il2cpp_codegen_multiply(L_65, L_68)));
 		float L_70 = V_4;
@@ -18932,14 +18928,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DynamicAPF_Redirector_GetPriority_m137F7
 		NullCheck(L_0);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_1 = L_0->___globalConfiguration_11;
 		NullCheck(L_1);
-		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_70;
+		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_69;
 		V_0 = L_2;
 		// var trackingSpacePoints = redirectionManager.globalConfiguration.trackingSpacePoints;
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_3 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
 		NullCheck(L_3);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_4 = L_3->___globalConfiguration_11;
 		NullCheck(L_4);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_69;
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_68;
 		V_1 = L_5;
 		// var userTransforms = redirectionManager.globalConfiguration.GetAvatarTransforms();
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_6 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
@@ -19349,14 +19345,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessingerAPF_Redirector_InjectRedirectio
 		NullCheck(L_0);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_1 = L_0->___globalConfiguration_11;
 		NullCheck(L_1);
-		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_70;
+		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_69;
 		V_0 = L_2;
 		// var trackingSpacePoints = redirectionManager.globalConfiguration.trackingSpacePoints;
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_3 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
 		NullCheck(L_3);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_4 = L_3->___globalConfiguration_11;
 		NullCheck(L_4);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_69;
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_68;
 		V_1 = L_5;
 		// var userTransforms = redirectionManager.globalConfiguration.GetAvatarTransforms();
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_6 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
@@ -20090,7 +20086,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessingerAPF_Redirector_InjectRedirectio
 		float L_24 = V_8;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_25 = V_7;
 		NullCheck(L_25);
-		float L_26 = L_25->___CURVATURE_RADIUS_23;
+		float L_26 = L_25->___CURVATURE_RADIUS_22;
 		V_9 = ((float)(((float)il2cpp_codegen_multiply((360.0f), L_24))/((float)il2cpp_codegen_multiply((6.28318548f), L_26))));
 		// var distToObstacle = Utilities.GetNearestDistToObstacleAndTrackingSpace(obstaclePolygons, trackingSpacePoints, redirectionManager.currPosReal);
 		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_27 = ___obstaclePolygons1;
@@ -20107,7 +20103,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessingerAPF_Redirector_InjectRedirectio
 		float L_33 = V_10;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_34 = V_7;
 		NullCheck(L_34);
-		float L_35 = L_34->___CURVATURE_RADIUS_23;
+		float L_35 = L_34->___CURVATURE_RADIUS_22;
 		if ((!(((float)L_33) < ((float)L_35))))
 		{
 			goto IL_010e;
@@ -20124,7 +20120,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MessingerAPF_Redirector_InjectRedirectio
 		float L_38 = V_13;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_39 = V_7;
 		NullCheck(L_39);
-		float L_40 = L_39->___CURVATURE_RADIUS_23;
+		float L_40 = L_39->___CURVATURE_RADIUS_22;
 		V_14 = ((float)il2cpp_codegen_subtract((1.0f), ((float)(L_38/L_40))));
 		// var appliedSteeringRate = (1 - t) * h + t * M;
 		float L_41 = V_14;
@@ -20166,7 +20162,7 @@ IL_010e:
 		NullCheck(L_56);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_57 = L_56->___globalConfiguration_11;
 		NullCheck(L_57);
-		float L_58 = L_57->___MIN_ROT_GAIN_22;
+		float L_58 = L_57->___MIN_ROT_GAIN_21;
 		float L_59;
 		L_59 = fabsf(((float)il2cpp_codegen_multiply(L_55, L_58)));
 		float L_60 = V_4;
@@ -20188,7 +20184,7 @@ IL_0169:
 		NullCheck(L_66);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_67 = L_66->___globalConfiguration_11;
 		NullCheck(L_67);
-		float L_68 = L_67->___MAX_ROT_GAIN_21;
+		float L_68 = L_67->___MAX_ROT_GAIN_20;
 		float L_69;
 		L_69 = fabsf(((float)il2cpp_codegen_multiply(L_65, L_68)));
 		float L_70 = V_4;
@@ -20306,12 +20302,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PassiveHapticAPF_Redirector_InjectRedire
 		// var obstaclePolygons = globalConfiguration.obstaclePolygons;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_0 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___globalConfiguration_4;
 		NullCheck(L_0);
-		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_1 = L_0->___obstaclePolygons_70;
+		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_1 = L_0->___obstaclePolygons_69;
 		V_0 = L_1;
 		// var trackingSpacePoints = globalConfiguration.trackingSpacePoints;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_2 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___globalConfiguration_4;
 		NullCheck(L_2);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_3 = L_2->___trackingSpacePoints_69;
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_3 = L_2->___trackingSpacePoints_68;
 		V_1 = L_3;
 		// GetRepulsiveOrAttractiveForceAndNegativeGradient(obstaclePolygons, trackingSpacePoints, out float rf, out Vector2 ng);
 		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_4 = V_0;
@@ -20516,7 +20512,7 @@ IL_00a4:
 		// foreach (var avatar in globalConfiguration.redirectedAvatars) {
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_34 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___globalConfiguration_4;
 		NullCheck(L_34);
-		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_35 = L_34->___redirectedAvatars_49;
+		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_35 = L_34->___redirectedAvatars_48;
 		NullCheck(L_35);
 		Enumerator_t88BD1282EF117E59AACFC9EC55B89F0B9EDACE60 L_36;
 		L_36 = List_1_GetEnumerator_mA843D26C63E5963415DFCA6E49DFA27AFD9C75E8(L_35, List_1_GetEnumerator_mA843D26C63E5963415DFCA6E49DFA27AFD9C75E8_RuntimeMethod_var);
@@ -20652,7 +20648,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 		// var physicalTargetPosReal = globalConfiguration.physicalTargetTransforms[movementManager.avatarId].position;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_0 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___globalConfiguration_4;
 		NullCheck(L_0);
-		List_1_tD5B7747547963A1B643A8ACB70217FE66F7AC3A5* L_1 = L_0->___physicalTargetTransforms_91;
+		List_1_tD5B7747547963A1B643A8ACB70217FE66F7AC3A5* L_1 = L_0->___physicalTargetTransforms_90;
 		MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* L_2 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___movementManager_6;
 		NullCheck(L_2);
 		int32_t L_3 = L_2->___avatarId_4;
@@ -20886,7 +20882,7 @@ IL_0009:
 		// var objPhysicalPos = gc.physicalTargetTransforms[movementManager.avatarId].position;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_14 = V_2;
 		NullCheck(L_14);
-		List_1_tD5B7747547963A1B643A8ACB70217FE66F7AC3A5* L_15 = L_14->___physicalTargetTransforms_91;
+		List_1_tD5B7747547963A1B643A8ACB70217FE66F7AC3A5* L_15 = L_14->___physicalTargetTransforms_90;
 		MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* L_16 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___movementManager_6;
 		NullCheck(L_16);
 		int32_t L_17 = L_16->___avatarId_4;
@@ -20920,11 +20916,11 @@ IL_0009:
 		// var gt = gc.MIN_TRANS_GAIN + 1;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_29 = V_2;
 		NullCheck(L_29);
-		float L_30 = L_29->___MIN_TRANS_GAIN_20;
+		float L_30 = L_29->___MIN_TRANS_GAIN_19;
 		// var Gt = gc.MAX_TRANS_GAIN + 1;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_31 = V_2;
 		NullCheck(L_31);
-		float L_32 = L_31->___MAX_TRANS_GAIN_19;
+		float L_32 = L_31->___MAX_TRANS_GAIN_18;
 		V_6 = ((float)il2cpp_codegen_add(L_32, (1.0f)));
 		// var phiP = Vector2.Angle(currDirReal, objPhysicalPos - currPosReal) * Mathf.Deg2Rad;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_33 = V_1;
@@ -20958,7 +20954,7 @@ IL_0009:
 		float L_44 = V_5;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_45 = V_2;
 		NullCheck(L_45);
-		float L_46 = L_45->___CURVATURE_RADIUS_23;
+		float L_46 = L_45->___CURVATURE_RADIUS_22;
 		float L_47;
 		L_47 = asinf(((float)(((float)(((float)il2cpp_codegen_multiply(L_44, (1.0f)))/L_46))/(2.0f))));
 		if ((!(((float)L_43) < ((float)L_47))))
@@ -21037,7 +21033,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PassiveHapticAPF_Redirector_ApplyRedirec
 		// g_t = -globalConfiguration.MIN_TRANS_GAIN;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_9 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___globalConfiguration_4;
 		NullCheck(L_9);
-		float L_10 = L_9->___MIN_TRANS_GAIN_20;
+		float L_10 = L_9->___MIN_TRANS_GAIN_19;
 		V_3 = ((-L_10));
 	}
 
@@ -21081,7 +21077,7 @@ IL_004f:
 		NullCheck(L_25);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_26 = L_25->___globalConfiguration_11;
 		NullCheck(L_26);
-		float L_27 = L_26->___CURVATURE_RADIUS_23;
+		float L_27 = L_26->___CURVATURE_RADIUS_22;
 		V_9 = ((float)il2cpp_codegen_multiply((57.2957802f), ((float)(L_24/L_27))));
 		// g_c = desiredSteeringDirection * Mathf.Min(rotationFromCurvatureGain, maxRotationFromCurvatureGain);
 		int32_t L_28 = V_8;
@@ -21109,7 +21105,7 @@ IL_004f:
 		float L_37 = V_10;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_38 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___globalConfiguration_4;
 		NullCheck(L_38);
-		float L_39 = L_38->___MIN_ROT_GAIN_22;
+		float L_39 = L_38->___MIN_ROT_GAIN_21;
 		float L_40;
 		L_40 = fabsf(((float)il2cpp_codegen_multiply(L_37, L_39)));
 		float L_41 = V_6;
@@ -21126,7 +21122,7 @@ IL_010b:
 		float L_44 = V_10;
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_45 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___globalConfiguration_4;
 		NullCheck(L_45);
-		float L_46 = L_45->___MAX_ROT_GAIN_21;
+		float L_46 = L_45->___MAX_ROT_GAIN_20;
 		float L_47;
 		L_47 = fabsf(((float)il2cpp_codegen_multiply(L_44, L_46)));
 		float L_48 = V_6;
@@ -21281,7 +21277,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Redirector_InjectRotation_m4D49DA5BA5CAE
 		NullCheck(L_12);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_13 = L_12->___globalConfiguration_11;
 		NullCheck(L_13);
-		StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* L_14 = L_13->___statisticsLogger_89;
+		StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* L_14 = L_13->___statisticsLogger_88;
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_15 = __this->___redirectionManager_5;
 		NullCheck(L_15);
 		MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* L_16 = L_15->___movementManager_18;
@@ -21361,7 +21357,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Redirector_InjectCurvature_m70A28AC6BAC8
 		NullCheck(L_13);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_14 = L_13->___globalConfiguration_11;
 		NullCheck(L_14);
-		StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* L_15 = L_14->___statisticsLogger_89;
+		StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* L_15 = L_14->___statisticsLogger_88;
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_16 = __this->___redirectionManager_5;
 		NullCheck(L_16);
 		MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* L_17 = L_16->___movementManager_18;
@@ -21463,7 +21459,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Redirector_InjectTranslation_m265F5F9227
 		NullCheck(L_6);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_7 = L_6->___globalConfiguration_11;
 		NullCheck(L_7);
-		StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* L_8 = L_7->___statisticsLogger_89;
+		StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* L_8 = L_7->___statisticsLogger_88;
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_9 = __this->___redirectionManager_5;
 		NullCheck(L_9);
 		MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* L_10 = L_9->___movementManager_18;
@@ -22030,7 +22026,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SteerToRedirector_InjectRedirection_mB44
 		NullCheck(L_8);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_9 = L_8->___globalConfiguration_11;
 		NullCheck(L_9);
-		float L_10 = L_9->___CURVATURE_RADIUS_23;
+		float L_10 = L_9->___CURVATURE_RADIUS_22;
 		__this->___rotationFromCurvatureGain_19 = ((float)il2cpp_codegen_multiply((57.2957802f), ((float)(L_7/L_10))));
 		// rotationFromCurvatureGain = Mathf.Min(rotationFromCurvatureGain, CURVATURE_GAIN_CAP_DEGREES_PER_SECOND * redirectionManager.GetDeltaTime());
 		float L_11 = __this->___rotationFromCurvatureGain_19;
@@ -22100,7 +22096,7 @@ IL_0089:
 		NullCheck(L_33);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_34 = L_33->___globalConfiguration_11;
 		NullCheck(L_34);
-		float L_35 = L_34->___MIN_ROT_GAIN_22;
+		float L_35 = L_34->___MIN_ROT_GAIN_21;
 		float L_36;
 		L_36 = fabsf(((float)il2cpp_codegen_multiply(L_32, L_35)));
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_37 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
@@ -22121,7 +22117,7 @@ IL_012d:
 		NullCheck(L_41);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_42 = L_41->___globalConfiguration_11;
 		NullCheck(L_42);
-		float L_43 = L_42->___MAX_ROT_GAIN_21;
+		float L_43 = L_42->___MAX_ROT_GAIN_20;
 		float L_44;
 		L_44 = fabsf(((float)il2cpp_codegen_multiply(L_40, L_43)));
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_45 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
@@ -22297,14 +22293,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ThomasAPF_Redirector_InjectRedirection_m
 		NullCheck(L_0);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_1 = L_0->___globalConfiguration_11;
 		NullCheck(L_1);
-		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_70;
+		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_2 = L_1->___obstaclePolygons_69;
 		V_0 = L_2;
 		// var trackingSpacePoints = redirectionManager.globalConfiguration.trackingSpacePoints;
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_3 = ((Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714*)__this)->___redirectionManager_5;
 		NullCheck(L_3);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_4 = L_3->___globalConfiguration_11;
 		NullCheck(L_4);
-		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_69;
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_5 = L_4->___trackingSpacePoints_68;
 		V_1 = L_5;
 		// GetRepulsiveForceAndNegativeGradient(obstaclePolygons, trackingSpacePoints, out float rf, out Vector2 ng);
 		List_1_t516F8BADEAB460ED0D6E288AB2CA877B5C32A3FE* L_6 = V_0;
@@ -22523,7 +22519,7 @@ IL_00a4:
 		NullCheck(L_34);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_35 = L_34->___globalConfiguration_11;
 		NullCheck(L_35);
-		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_36 = L_35->___redirectedAvatars_49;
+		List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* L_36 = L_35->___redirectedAvatars_48;
 		NullCheck(L_36);
 		Enumerator_t88BD1282EF117E59AACFC9EC55B89F0B9EDACE60 L_37;
 		L_37 = List_1_GetEnumerator_mA843D26C63E5963415DFCA6E49DFA27AFD9C75E8(L_36, List_1_GetEnumerator_mA843D26C63E5963415DFCA6E49DFA27AFD9C75E8_RuntimeMethod_var);
@@ -22788,7 +22784,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ThomasAPF_Redirector_ApplyRedirectionByN
 		NullCheck(L_9);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_10 = L_9->___globalConfiguration_11;
 		NullCheck(L_10);
-		float L_11 = L_10->___MIN_TRANS_GAIN_20;
+		float L_11 = L_10->___MIN_TRANS_GAIN_19;
 		V_3 = ((-L_11));
 	}
 
@@ -22832,7 +22828,7 @@ IL_0054:
 		NullCheck(L_26);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_27 = L_26->___globalConfiguration_11;
 		NullCheck(L_27);
-		float L_28 = L_27->___CURVATURE_RADIUS_23;
+		float L_28 = L_27->___CURVATURE_RADIUS_22;
 		V_9 = ((float)il2cpp_codegen_multiply((57.2957802f), ((float)(L_25/L_28))));
 		// g_c = desiredSteeringDirection * Mathf.Min(rotationFromCurvatureGain, maxRotationFromCurvatureGain);
 		int32_t L_29 = V_8;
@@ -22862,7 +22858,7 @@ IL_0054:
 		NullCheck(L_39);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_40 = L_39->___globalConfiguration_11;
 		NullCheck(L_40);
-		float L_41 = L_40->___MIN_ROT_GAIN_22;
+		float L_41 = L_40->___MIN_ROT_GAIN_21;
 		float L_42;
 		L_42 = fabsf(((float)il2cpp_codegen_multiply(L_38, L_41)));
 		float L_43 = V_6;
@@ -22881,7 +22877,7 @@ IL_0115:
 		NullCheck(L_47);
 		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_48 = L_47->___globalConfiguration_11;
 		NullCheck(L_48);
-		float L_49 = L_48->___MAX_ROT_GAIN_21;
+		float L_49 = L_48->___MAX_ROT_GAIN_20;
 		float L_50;
 		L_50 = fabsf(((float)il2cpp_codegen_multiply(L_46, L_49)));
 		float L_51 = V_6;

@@ -777,12 +777,19 @@ public class StatisticsLogger : MonoBehaviour {
     
     //save path, boundaries, obstacles as a image
     public void LogExperimentPathPictures(int experimentSetupId) {
-        var experimentSetups = globalConfiguration.experimentSetups;
+        globalConfiguration.GetResultDirAndFileName(GRAPH_DERECTORY, out string resultDir, out string fileName);
+        Utilities.CreateDirectoryIfNeeded(resultDir);
+        resultDir += fileName + "/";
+        Utilities.CreateDirectoryIfNeeded(resultDir);
+        string graphsDirectory = resultDir /*+ experimentDecriptorString + "/"*/;
 
+        var experimentSetups = globalConfiguration.experimentSetups;
         var experimentSetup = experimentSetups[experimentSetupId];
 
         //set background to white
         Utilities.SetTextureToSingleColor(texRealPathGraph, backgroundColor);
+        Utilities.SetTextureToSingleColor(texVirtualPathGraph, backgroundColor);
+        Utilities.SetTextureToSingleColor(texCombinedPathGraph, backgroundColor);
 
         var trackingSpacePoints = experimentSetup.trackingSpacePoints;
         var obstaclePolygons = experimentSetup.obstaclePolygons;
@@ -833,9 +840,9 @@ public class StatisticsLogger : MonoBehaviour {
         texCombinedPathGraph.Apply();
         
         //Export as png file
-        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + Utilities.GetTimeStringForFileName() + "_virtualPath.png", texCombinedPathGraph); 
-        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + Utilities.GetTimeStringForFileName() + "_realPath.png", texCombinedPathGraph); 
-        Utilities.ExportTexture2dToPng(GRAPH_DERECTORY + Utilities.GetTimeStringForFileName() + "_combinedPath.png", texCombinedPathGraph); 
+        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_virtualPath.png", texCombinedPathGraph); 
+        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_realPath.png", texCombinedPathGraph); 
+        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_combinedPath.png", texCombinedPathGraph); 
     }
 
     public void LogOneDimensionalExperimentSamples(string experimentSamplesDirectory, string measuredMetric, List<float> values)

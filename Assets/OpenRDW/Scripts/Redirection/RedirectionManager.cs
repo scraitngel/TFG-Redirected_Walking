@@ -131,8 +131,6 @@ public class RedirectionManager : MonoBehaviour
                     break;
             }
         }
-
-        //textBox.text = "Head: " + headMovement + " Blink: " + blinks + " Frames: " + frames + " Sound: " + sounds;
     }
     void Awake()
     {

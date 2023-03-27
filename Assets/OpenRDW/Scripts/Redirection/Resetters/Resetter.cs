@@ -80,7 +80,6 @@ public abstract class Resetter : MonoBehaviour {
                     float walkingDistance = (redirectionManager.currPos - redirectionManager.prevPos).magnitude;
                     float distanceDetection = 0.5f + walkingDistance;
                     
-                    //redirectionManager.textBox.text = distanceDetection.ToString() + " " + framesCount;
                     if (info.closestDistance < distanceDetection && framesCount > 10) {
                         framesCount = 0;
                         return true;
