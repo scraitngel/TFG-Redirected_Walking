@@ -840,8 +840,8 @@ public class StatisticsLogger : MonoBehaviour {
         texCombinedPathGraph.Apply();
         
         //Export as png file
-        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_virtualPath.png", texCombinedPathGraph); 
-        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_realPath.png", texCombinedPathGraph); 
+        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_virtualPath.png", texVirtualPathGraph); 
+        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_realPath.png", texRealPathGraph); 
         Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_combinedPath.png", texCombinedPathGraph); 
     }
 

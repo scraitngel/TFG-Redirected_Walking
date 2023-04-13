@@ -120,7 +120,7 @@ public class GlobalConfiguration : MonoBehaviour
     [HideInInspector]
     public List<List<ExperimentSetup>> experimentSetupsList;//experimentSetups of muliple command files
 
-    private int trialsForCurrentExperiment = 5;
+    private int trialsForCurrentExperiment = 1;
 
     [HideInInspector]
     public int experimentIterator = 0;//command group Id
@@ -505,11 +505,8 @@ public class GlobalConfiguration : MonoBehaviour
         //press key Q to stop Experiment manually
         if (Input.GetKeyDown(KeyCode.Q) || (movementController == MovementController.HMD && Input.GetButtonDown("Fire2"))) {
             if (movementController == MovementController.HMD) {
-                if (exportImage) {
-                    statisticsLogger.LogExperimentPathPictures(experimentIterator);
-                }
-                EndExperiment(0);
-
+                //EndExperiment(0);
+                StartCoroutine(LogInformation());
                 SceneManager.LoadSceneAsync("VR_Scene");
             } else {
                 EndExperiment(1);
@@ -533,6 +530,98 @@ public class GlobalConfiguration : MonoBehaviour
         }
         UpdateUI();
     }
+
+    bool ended;
+    IEnumerator LogInformation() {
+        if (movementController == MovementController.HMD)
+            readyToStart = false;
+
+        ExperimentSetup setup = experimentSetups[experimentIterator];
+
+        var avatarList = setup.avatars;
+        for (int id = 0; id < avatarList.Count; id++)
+        {
+            var mm = redirectedAvatars[id].GetComponent<MovementManager>();
+            var rm = redirectedAvatars[id].GetComponent<RedirectionManager>();
+
+            // Disable Waypoint
+            rm.targetWaypoint.gameObject.SetActive(false);
+            // Disabling Redirectors
+            rm.RemoveRedirector();
+            rm.RemoveResetter();
+        }
+        
+        if (passiveHaptics)
+        {
+            if (physicalTargets == null || physicalTargets.Count < redirectedAvatars.Count)
+            {
+                Debug.LogError("physicalTargets == null || physicalTargets.Count < redirectedAvatars.Count!");
+            }
+            else {
+                for (int id = 0; id < redirectedAvatars.Count; id++)
+                {
+                    var posReal = Utilities.FlattenedPos2D(redirectedAvatars[id].GetComponent<RedirectionManager>().currPosReal);
+                    var dirReal = Utilities.FlattenedPos2D(redirectedAvatars[id].GetComponent<RedirectionManager>().currDirReal);
+                    var dist = (physicalTargetTransforms[id].position - posReal).magnitude;
+                    var angle = Vector2.Angle(physicalTargetTransforms[id].forward, dirReal);
+                    //Debug.Log(string.Format("Ep = {0}, Ea", dist.ToString("f3"), angle.ToString("f3")));
+                    statisticsLogger.Event_Update_PassiveHaptics_Results(id, dist, angle);
+                }
+            }
+        }
+
+        avatarIsWalking = false;
+
+        // Stop Logging
+        statisticsLogger.EndLogging();
+
+        // Gather Summary Statistics
+        statisticsLogger.experimentResults.Add(statisticsLogger.GetExperimentResultForSummaryStatistics(0,GetExperimentDescriptor(setup)));
+
+        // Log Sampled Metrics
+        if (statisticsLogger.logSampleVariables)
+        {
+            List<Dictionary<string, List<float>>> oneDimensionalSamples;
+            List<Dictionary<string, List<Vector2>>> twoDimensionalSamples;
+            statisticsLogger.GetExperimentResultsForSampledVariables(out oneDimensionalSamples, out twoDimensionalSamples);
+            statisticsLogger.LogAllExperimentSamples(TrialIdToString(experimentIterator), oneDimensionalSamples, twoDimensionalSamples);
+        }
+
+        //save images
+        if (exportImage) {
+            ended = false;
+           StartCoroutine(LogImages());
+
+        } else {
+            ended = true;
+        }
+
+        yield return new WaitUntil(() => ended);
+
+        //create temporary files to indicate the stage of the experiment
+        File.WriteAllText(statisticsLogger.Get_TMP_DERECTORY() + @"\" + experimentSetupsListIterator + "-" + experimentSetupsList.Count + " " + experimentIterator + "-" + experimentSetups.Count + ".txt", "");
+
+        // Prepared for new experiment
+        experimentIterator++;
+        
+        experimentInProgress = false;
+
+        // Log All Summary Statistics To File
+        GetResultDirAndFileName(statisticsLogger.SUMMARY_STATISTICS_DIRECTORY, out string resultDir, out string fileName);
+
+        //Debug.Log(string.Format("Save data to resultDir:{0}, fileName:{1}", resultDir, fileName));
+        statisticsLogger.LogExperimentSummaryStatisticsResultsSCSV(statisticsLogger.experimentResults, resultDir, fileName);
+
+        //initialize experiment results 
+        statisticsLogger.InitializeExperimentResults();
+    }
+
+    IEnumerator LogImages() {
+        statisticsLogger.LogExperimentPathPictures(experimentIterator);
+        ended = true;
+        yield return null;
+    }
+
     public void UpdateUI() {       
         userInterfaceManager.SetActivePanelExperimentComplete(experimentComplete);
     }
