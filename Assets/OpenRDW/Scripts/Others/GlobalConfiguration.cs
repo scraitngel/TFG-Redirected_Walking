@@ -40,6 +40,9 @@ public class GlobalConfiguration : MonoBehaviour
     public static float bufferParentHeight = 0.0016f;
 
     #region Experiment 
+
+    [SerializedField]
+    public Text textBox;
     
     [Header("Experiment")]
     [Tooltip("How avatar movement will be controlled")]

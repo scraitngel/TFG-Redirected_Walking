@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Net.Mime;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -141,7 +142,12 @@ public static class Utilities
     }
     public static void ExportTexture2dToPng(string path, Texture2D tex)
     {
-        File.WriteAllBytes(path, tex.EncodeToPNG());
+        byte[] bytes = ImageConversion.EncodeToPNG(tex);
+        Object.Destroy(tex);
+
+        // For testing purposes, also write to a file in the project folder
+        File.WriteAllBytes(Application.persistentDataPath + "/" + path, bytes);
+        // File.WriteAllBytes(path, tex.EncodeToPNG());
     }
     //physical coordinate to pixel coordinate
     public static Vector2 RealPosToPixelPos(Texture2D tex, Vector2 p, float sideLength) {

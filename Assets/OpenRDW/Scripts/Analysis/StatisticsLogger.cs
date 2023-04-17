@@ -840,9 +840,12 @@ public class StatisticsLogger : MonoBehaviour {
         texCombinedPathGraph.Apply();
         
         //Export as png file
-        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_virtualPath.png", texVirtualPathGraph); 
-        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_realPath.png", texRealPathGraph); 
-        Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_combinedPath.png", texCombinedPathGraph); 
+        Utilities.ExportTexture2dToPng(/*Utilities.GetTimeStringForFileName() + */"_virtualPath.png", texVirtualPathGraph); 
+        Utilities.ExportTexture2dToPng(/*Utilities.GetTimeStringForFileName() + */"_realPath.png", texRealPathGraph); 
+        Utilities.ExportTexture2dToPng(/*Utilities.GetTimeStringForFileName() + */"_combinedPath.png", texCombinedPathGraph); 
+        // Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_virtualPath.png", texVirtualPathGraph); 
+        // Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_realPath.png", texRealPathGraph); 
+        // Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_combinedPath.png", texCombinedPathGraph); 
     }
 
     public void LogOneDimensionalExperimentSamples(string experimentSamplesDirectory, string measuredMetric, List<float> values)
