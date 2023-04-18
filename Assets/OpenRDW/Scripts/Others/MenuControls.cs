@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.XR.PXR;
 
-namespace SlimUI.ModernMenu{
+namespace SlimUI.ModernMenu {
 	public class MenuControls : MonoBehaviour {
 		Animator CameraObject;
 /*
@@ -13,6 +13,7 @@ namespace SlimUI.ModernMenu{
 		[Tooltip("The name of the scene in the build settings that will load")]
 		public string sceneName = ""; 
 */
+
 		public enum Theme {custom1, custom2, custom3};
 		[Header("Theme Settings")]
 		public Theme theme;

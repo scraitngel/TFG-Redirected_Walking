@@ -777,12 +777,6 @@ public class StatisticsLogger : MonoBehaviour {
     
     //save path, boundaries, obstacles as a image
     public void LogExperimentPathPictures(int experimentSetupId) {
-        globalConfiguration.GetResultDirAndFileName(GRAPH_DERECTORY, out string resultDir, out string fileName);
-        Utilities.CreateDirectoryIfNeeded(resultDir);
-        resultDir += fileName + "/";
-        Utilities.CreateDirectoryIfNeeded(resultDir);
-        string graphsDirectory = resultDir /*+ experimentDecriptorString + "/"*/;
-
         var experimentSetups = globalConfiguration.experimentSetups;
         var experimentSetup = experimentSetups[experimentSetupId];
 
@@ -821,7 +815,7 @@ public class StatisticsLogger : MonoBehaviour {
                 Utilities.DrawLine(texCombinedPathGraph, realPosList[i], realPosList[i + 1], realSideLength, pathThickness, w * color + (1 - w) * backgroundColor, (w + deltaWeight) * color + (1 - w - deltaWeight) * backgroundColor);
             }
         }
-        texRealPathGraph.Apply();
+        //texRealPathGraph.Apply();
 
         for (int uId = 0; uId < avatarStatistics.Count; uId++) {
             var virtualPosList = avatarStatistics[uId].userVirtualPositionSamples;
@@ -836,16 +830,13 @@ public class StatisticsLogger : MonoBehaviour {
             }
         }
 
-        texVirtualPathGraph.Apply();
-        texCombinedPathGraph.Apply();
+        //texVirtualPathGraph.Apply();
+        //texCombinedPathGraph.Apply();
         
         //Export as png file
-        Utilities.ExportTexture2dToPng(/*Utilities.GetTimeStringForFileName() + */"_virtualPath.png", texVirtualPathGraph); 
-        Utilities.ExportTexture2dToPng(/*Utilities.GetTimeStringForFileName() + */"_realPath.png", texRealPathGraph); 
-        Utilities.ExportTexture2dToPng(/*Utilities.GetTimeStringForFileName() + */"_combinedPath.png", texCombinedPathGraph); 
-        // Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_virtualPath.png", texVirtualPathGraph); 
-        // Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_realPath.png", texRealPathGraph); 
-        // Utilities.ExportTexture2dToPng(graphsDirectory + Utilities.GetTimeStringForFileName() + "_combinedPath.png", texCombinedPathGraph); 
+        Utilities.ExportTexture2dToPng("file:///" + GRAPH_DERECTORY + string.Format("{0}_{1}_realPath.png", experimentSetupId, Utilities.GetTimeStringForFileName()), texRealPathGraph);  
+        Utilities.ExportTexture2dToPng("file:///" + GRAPH_DERECTORY + string.Format("{0}_{1}_virtualPath.png", experimentSetupId, Utilities.GetTimeStringForFileName()), texVirtualPathGraph);  
+        Utilities.ExportTexture2dToPng("file:///" + GRAPH_DERECTORY + string.Format("{0}_{1}_combinedPath.png", experimentSetupId, Utilities.GetTimeStringForFileName()), texCombinedPathGraph);  
     }
 
     public void LogOneDimensionalExperimentSamples(string experimentSamplesDirectory, string measuredMetric, List<float> values)
