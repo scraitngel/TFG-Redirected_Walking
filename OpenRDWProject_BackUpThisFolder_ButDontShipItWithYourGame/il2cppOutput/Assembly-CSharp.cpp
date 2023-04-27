@@ -740,6 +740,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral94CCB1109F861FB0EC275A13889A720A42FEDCD4
 IL2CPP_EXTERN_C String_t* _stringLiteral951CCB49640C8F9E81FB4E0D82730321F4E15BB3;
 IL2CPP_EXTERN_C String_t* _stringLiteral95B8C67D821B73D818E81DB2DB7D9056A3D413C5;
 IL2CPP_EXTERN_C String_t* _stringLiteral9750E0B044479121F8403D08600D4BFE0D10A536;
+IL2CPP_EXTERN_C String_t* _stringLiteral97F1335639B7E47EE13E13E41DF38A1CFE644CB4;
 IL2CPP_EXTERN_C String_t* _stringLiteral985B72B30ECE05DD4EF5FE142CEE0FB8BF53A98C;
 IL2CPP_EXTERN_C String_t* _stringLiteral98CFEE54854337C6E253683DE19F3AB7F1FF7678;
 IL2CPP_EXTERN_C String_t* _stringLiteral994B642581603907F374370B25F3C56429AA79B2;
@@ -11470,6 +11471,79 @@ IL_0462:
 		L_235 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteral876BA9D37F5B3B86B1953A81D0C931AE6AFB2BED, L_229, L_234, NULL);
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_236 = __this->___texCombinedPathGraph_38;
 		Utilities_ExportTexture2dToPng_m8E52F04E743F2F1D98C85A9A8E7EB3D11613E6D7(L_235, L_236, NULL);
+		// }
+		return;
+	}
+}
+// System.Void StatisticsLogger::LogExperimentInfo(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StatisticsLogger_LogExperimentInfo_m920E235628202433A47BEA54DAF0DA6F547A7BB0 (StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* __this, String_t* ___experimentSamplesDirectory0, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Utilities_t6F35AFE0F28F4AF967399B21FCB76780ED3D6BFB_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral97F1335639B7E47EE13E13E41DF38A1CFE644CB4);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// Utilities.CreateDirectoryIfNeeded(experimentSamplesDirectory);
+		String_t* L_0 = ___experimentSamplesDirectory0;
+		il2cpp_codegen_runtime_class_init_inline(Utilities_t6F35AFE0F28F4AF967399B21FCB76780ED3D6BFB_il2cpp_TypeInfo_var);
+		Utilities_CreateDirectoryIfNeeded_m643F5166F91B8AE9F245225F6B8DEDABD0A9D9CB(L_0, NULL);
+		// csvWriter = new StreamWriter(experimentSamplesDirectory + Utilities.GetTimeStringForFileName() + "-ExperimentInfo.csv");
+		String_t* L_1 = ___experimentSamplesDirectory0;
+		String_t* L_2;
+		L_2 = Utilities_GetTimeStringForFileName_mD38822DC9D5906EFDC009F5E9AB938E2E44B7D14(NULL);
+		String_t* L_3;
+		L_3 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_1, L_2, _stringLiteral97F1335639B7E47EE13E13E41DF38A1CFE644CB4, NULL);
+		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_4 = (StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4*)il2cpp_codegen_object_new(StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4_il2cpp_TypeInfo_var);
+		NullCheck(L_4);
+		StreamWriter__ctor_m7C83908E2616C22FA632EF67E36E137932E534D7(L_4, L_3, NULL);
+		__this->___csvWriter_35 = L_4;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___csvWriter_35), (void*)L_4);
+		// csvWriter.WriteLine(Choices.redirector + " " + Choices.resetter + " " + Choices.momentum);
+		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_5 = __this->___csvWriter_35;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_6 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)5);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_7 = L_6;
+		il2cpp_codegen_runtime_class_init_inline(Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_il2cpp_TypeInfo_var);
+		String_t* L_8 = ((Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_StaticFields*)il2cpp_codegen_static_fields_for(Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_il2cpp_TypeInfo_var))->___redirector_4;
+		NullCheck(L_7);
+		ArrayElementTypeCheck (L_7, L_8);
+		(L_7)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)L_8);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_9 = L_7;
+		NullCheck(L_9);
+		ArrayElementTypeCheck (L_9, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		(L_9)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_10 = L_9;
+		String_t* L_11 = ((Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_StaticFields*)il2cpp_codegen_static_fields_for(Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_il2cpp_TypeInfo_var))->___resetter_5;
+		NullCheck(L_10);
+		ArrayElementTypeCheck (L_10, L_11);
+		(L_10)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)L_11);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_12 = L_10;
+		NullCheck(L_12);
+		ArrayElementTypeCheck (L_12, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		(L_12)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_13 = L_12;
+		String_t* L_14 = ((Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_StaticFields*)il2cpp_codegen_static_fields_for(Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_il2cpp_TypeInfo_var))->___momentum_6;
+		NullCheck(L_13);
+		ArrayElementTypeCheck (L_13, L_14);
+		(L_13)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)L_14);
+		String_t* L_15;
+		L_15 = String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A(L_13, NULL);
+		NullCheck(L_5);
+		VirtualActionInvoker1< String_t* >::Invoke(22 /* System.Void System.IO.TextWriter::WriteLine(System.String) */, L_5, L_15);
+		// csvWriter.Flush();
+		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_16 = __this->___csvWriter_35;
+		NullCheck(L_16);
+		VirtualActionInvoker0::Invoke(10 /* System.Void System.IO.TextWriter::Flush() */, L_16);
+		// csvWriter.Close();
+		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_17 = __this->___csvWriter_35;
+		NullCheck(L_17);
+		VirtualActionInvoker0::Invoke(8 /* System.Void System.IO.TextWriter::Close() */, L_17);
 		// }
 		return;
 	}

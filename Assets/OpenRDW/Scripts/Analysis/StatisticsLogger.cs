@@ -839,6 +839,15 @@ public class StatisticsLogger : MonoBehaviour {
         Utilities.ExportTexture2dToPng("file:///" + GRAPH_DERECTORY + string.Format("{0}_{1}_combinedPath.png", experimentSetupId, Utilities.GetTimeStringForFileName()), texCombinedPathGraph);  
     }
 
+    public void LogExperimentInfo(string experimentSamplesDirectory)
+    {        
+        Utilities.CreateDirectoryIfNeeded(experimentSamplesDirectory);
+        csvWriter = new StreamWriter(experimentSamplesDirectory + Utilities.GetTimeStringForFileName() + "-ExperimentInfo.csv");
+        csvWriter.WriteLine(Choices.redirector + " " + Choices.resetter + " " + Choices.momentum);
+        csvWriter.Flush();
+        csvWriter.Close();
+    }
+
     public void LogOneDimensionalExperimentSamples(string experimentSamplesDirectory, string measuredMetric, List<float> values)
     {        
         Utilities.CreateDirectoryIfNeeded(experimentSamplesDirectory);

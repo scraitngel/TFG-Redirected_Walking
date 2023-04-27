@@ -584,14 +584,21 @@ public class GlobalConfiguration : MonoBehaviour
             List<Dictionary<string, List<float>>> oneDimensionalSamples;
             List<Dictionary<string, List<Vector2>>> twoDimensionalSamples;
             statisticsLogger.GetExperimentResultsForSampledVariables(out oneDimensionalSamples, out twoDimensionalSamples);
-            statisticsLogger.LogAllExperimentSamples(TrialIdToString(experimentIterator), oneDimensionalSamples, twoDimensionalSamples);
+            statisticsLogger.LogAllExperimentSamples(TrialIdToString(experimentIterator), oneDimensionalSamples, twoDimensionalSamples);   
         }
+
+        GetResultDirAndFileName(statisticsLogger.SAMPLED_METRICS_DIRECTORY, out string _resultDir, out string _fileName);
+        Utilities.CreateDirectoryIfNeeded(_resultDir);
+        _resultDir += _fileName + "/";
+        Utilities.CreateDirectoryIfNeeded(_resultDir);
+        string experimentSamplesDirectory = _resultDir;
+
+        statisticsLogger.LogExperimentInfo(experimentSamplesDirectory + "userId_0/");
 
         //save images
         if (exportImage) {
             ended = false;
            StartCoroutine(LogImages());
-
         } else {
             ended = true;
         }
