@@ -4227,6 +4227,8 @@ struct RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC  : public Mo
 	bool ___inSound_52;
 	// UnityEngine.Vector3 RedirectionManager::lastLookdirection
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___lastLookdirection_53;
+	// System.Int32 RedirectionManager::numRedireccion
+	int32_t ___numRedireccion_54;
 };
 
 struct RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC_StaticFields

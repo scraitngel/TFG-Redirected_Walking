@@ -11,8 +11,7 @@ public class RedirectionManager : MonoBehaviour
     public static readonly float MaxSamePosTime = 50;//the max time(in seconds) the avatar can stand on the same position, exceeds this value will make data invalid (stuck in one place)
 
     public enum RedirectorChoice { None, S2C, S2O, Zigzag, ThomasAPF, MessingerAPF, DynamicAPF, DeepLearning, PassiveHapticAPF, VisPoly };
-    public enum ResetterChoice { None, TwoOneTurn, APF };
-
+    public enum ResetterChoice { None, TwoOneTurn, APF, RandomAngle };
 
     [Tooltip("The game object that is being physically tracked (probably user's head)")]
     public Transform headTransform;
@@ -273,6 +272,8 @@ public class RedirectionManager : MonoBehaviour
                 return typeof(TwoOneTurnResetter);
             case "apf":
                 return typeof(APF_Resetter);
+            case "randomangle":
+                return typeof(RandomAngleResetter);
         }
         return typeof(NullResetter);
     }
@@ -284,6 +285,8 @@ public class RedirectionManager : MonoBehaviour
             return ResetterChoice.TwoOneTurn;
         else if (reset.Equals(typeof(APF_Resetter)))
             return ResetterChoice.APF;
+        else if (reset.Equals(typeof(RandomAngleResetter)))
+            return ResetterChoice.RandomAngle;
         return ResetterChoice.None;
     }
     public static System.Type DecodeResetter(string s)
@@ -328,6 +331,8 @@ public class RedirectionManager : MonoBehaviour
     private float time = 0.0f, blinkingTime, blinkInterval, soundInterval, timeSound = 0.0f;
     private bool inBlink = false, justRedirected = false, inSound = false;
     Vector3 lastLookdirection;
+
+    int numRedireccion = 0;
 
     //make one step redirection: redirect or reset
     public void MakeOneStepRedirection()
@@ -426,8 +431,10 @@ public class RedirectionManager : MonoBehaviour
 
                     lastLookdirection = look;
                 } 
-                if (frames && !redirectionDone) {
+
+                if (frames && !redirectionDone && deltaPos.magnitude > 0.01) {
                     redirector.InjectRedirection();
+                    numRedireccion++;
                 }
             }
 

@@ -556,6 +556,8 @@ struct PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB;
 struct Polygon2D_tF016E38C60301AB43AC04C64ED28FA65E8D4054F;
 // System.Random
 struct Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8;
+// RandomAngleResetter
+struct RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3;
 // UnityEngine.UI.RectMask2D
 struct RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670;
 // UnityEngine.RectTransform
@@ -4403,6 +4405,8 @@ struct RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC  : public Mo
 	bool ___inSound_52;
 	// UnityEngine.Vector3 RedirectionManager::lastLookdirection
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___lastLookdirection_53;
+	// System.Int32 RedirectionManager::numRedireccion
+	int32_t ___numRedireccion_54;
 };
 
 struct RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC_StaticFields
@@ -4727,6 +4731,15 @@ struct Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931_StaticFields
 // NullResetter
 struct NullResetter_t910BD934ADD817E59F5DC2CC95546E6C049630C6  : public Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8
 {
+};
+
+// RandomAngleResetter
+struct RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3  : public Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8
+{
+	// System.Single RandomAngleResetter::overallInjectedRotation
+	float ___overallInjectedRotation_11;
+	// System.Single RandomAngleResetter::requiredRotateAngle
+	float ___requiredRotateAngle_12;
 };
 
 // UnityEngine.UI.Selectable
@@ -6127,6 +6140,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SimulatedWalker_RotateInPlace_mABED8DD15
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Resetter__ctor_m6C9B56DD044943B392BA40A49CE40AA56800DDE8 (Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Debug::LogWarning(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9 (RuntimeObject* ___message0, const RuntimeMethod* method) ;
+// System.Single UnityEngine.Random::Range(System.Single,System.Single)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494 (float ___minInclusive0, float ___maxInclusive1, const RuntimeMethod* method) ;
 // T UnityEngine.Component::GetComponent<MovementManager>()
 inline MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* Component_GetComponent_TisMovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50_mD960D9DB52D4B6839E227C395741993F35C5F98E (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
 {
@@ -10333,6 +10348,221 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NullResetter_IsResetRequired_mE9F5AFFCC7
 }
 // System.Void NullResetter::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NullResetter__ctor_m6AF98D4FE2C3DFBB327E53C83A98A83216A94227 (NullResetter_t910BD934ADD817E59F5DC2CC95546E6C049630C6* __this, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		il2cpp_codegen_runtime_class_init_inline(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8_il2cpp_TypeInfo_var);
+		Resetter__ctor_m6C9B56DD044943B392BA40A49CE40AA56800DDE8(__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Boolean RandomAngleResetter::IsResetRequired()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RandomAngleResetter_IsResetRequired_m76BC66CD4C85318284DF63E9D330CE2942690AEA (RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3* __this, const RuntimeMethod* method) 
+{
+	{
+		// return IfCollisionHappens();
+		bool L_0;
+		L_0 = Resetter_IfCollisionHappens_mB9D4B8B92FD9748F07F8228F04B223E0BD84BD07(__this, NULL);
+		return L_0;
+	}
+}
+// System.Void RandomAngleResetter::InitializeReset()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RandomAngleResetter_InitializeReset_m969AE163078CB20CCA37B2B4EB5681277A464FDD (RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3* __this, const RuntimeMethod* method) 
+{
+	{
+		// overallInjectedRotation = 0;
+		__this->___overallInjectedRotation_11 = (0.0f);
+		// requiredRotateAngle = Random.Range(90.0f, 270.0f);
+		float L_0;
+		L_0 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((90.0f), (270.0f), NULL);
+		__this->___requiredRotateAngle_12 = L_0;
+		// SetHUD(1);
+		Resetter_SetHUD_mB2C986A2D4F84A084A991B98564425D0F59EF334(__this, 1, NULL);
+		// }
+		return;
+	}
+}
+// System.Void RandomAngleResetter::InjectResetting()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RandomAngleResetter_InjectResetting_m99ED0AFA7E52855067642410FD57FA06AF7B17A2 (RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3* __this, const RuntimeMethod* method) 
+{
+	float V_0 = 0.0f;
+	float G_B4_0 = 0.0f;
+	{
+		// if (Mathf.Abs(overallInjectedRotation) < requiredRotateAngle)
+		float L_0 = __this->___overallInjectedRotation_11;
+		float L_1;
+		L_1 = fabsf(L_0);
+		float L_2 = __this->___requiredRotateAngle_12;
+		if ((!(((float)L_1) < ((float)L_2))))
+		{
+			goto IL_00b5;
+		}
+	}
+	{
+		// float remainingRotation = redirectionManager.deltaDir > 0 ? requiredRotateAngle - overallInjectedRotation : -requiredRotateAngle - overallInjectedRotation; // The idea is that we're gonna keep going in this direction till we reach objective
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_3 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
+		NullCheck(L_3);
+		float L_4 = L_3->___deltaDir_32;
+		if ((((float)L_4) > ((float)(0.0f))))
+		{
+			goto IL_0038;
+		}
+	}
+	{
+		float L_5 = __this->___requiredRotateAngle_12;
+		float L_6 = __this->___overallInjectedRotation_11;
+		G_B4_0 = ((float)il2cpp_codegen_subtract(((-L_5)), L_6));
+		goto IL_0045;
+	}
+
+IL_0038:
+	{
+		float L_7 = __this->___requiredRotateAngle_12;
+		float L_8 = __this->___overallInjectedRotation_11;
+		G_B4_0 = ((float)il2cpp_codegen_subtract(L_7, L_8));
+	}
+
+IL_0045:
+	{
+		V_0 = G_B4_0;
+		// if (Mathf.Abs(remainingRotation) < Mathf.Abs(redirectionManager.deltaDir) || requiredRotateAngle==0)
+		float L_9 = V_0;
+		float L_10;
+		L_10 = fabsf(L_9);
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_11 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
+		NullCheck(L_11);
+		float L_12 = L_11->___deltaDir_32;
+		float L_13;
+		L_13 = fabsf(L_12);
+		if ((((float)L_10) < ((float)L_13)))
+		{
+			goto IL_006b;
+		}
+	}
+	{
+		float L_14 = __this->___requiredRotateAngle_12;
+		if ((!(((float)L_14) == ((float)(0.0f)))))
+		{
+			goto IL_008c;
+		}
+	}
+
+IL_006b:
+	{
+		// InjectRotation(remainingRotation);
+		float L_15 = V_0;
+		Resetter_InjectRotation_m3C20747E4C555DD18DD64C4C53B130B78923A730(__this, L_15, NULL);
+		// redirectionManager.OnResetEnd();
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_16 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
+		NullCheck(L_16);
+		RedirectionManager_OnResetEnd_m21C73CC26E0C40AAC8201AE4725E384C19B5F008(L_16, NULL);
+		// overallInjectedRotation += remainingRotation;
+		float L_17 = __this->___overallInjectedRotation_11;
+		float L_18 = V_0;
+		__this->___overallInjectedRotation_11 = ((float)il2cpp_codegen_add(L_17, L_18));
+		return;
+	}
+
+IL_008c:
+	{
+		// InjectRotation(redirectionManager.deltaDir);
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_19 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
+		NullCheck(L_19);
+		float L_20 = L_19->___deltaDir_32;
+		Resetter_InjectRotation_m3C20747E4C555DD18DD64C4C53B130B78923A730(__this, L_20, NULL);
+		// overallInjectedRotation += redirectionManager.deltaDir;
+		float L_21 = __this->___overallInjectedRotation_11;
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_22 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
+		NullCheck(L_22);
+		float L_23 = L_22->___deltaDir_32;
+		__this->___overallInjectedRotation_11 = ((float)il2cpp_codegen_add(L_21, L_23));
+	}
+
+IL_00b5:
+	{
+		// }
+		return;
+	}
+}
+// System.Void RandomAngleResetter::EndReset()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RandomAngleResetter_EndReset_m734721060422E19FEB0790BD767762E8D2AB2F77 (RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3* __this, const RuntimeMethod* method) 
+{
+	{
+		// DestroyHUD();
+		Resetter_DestroyHUD_m780C27719745DA6D6D1D1B1B55B8C9780FAD92B4(__this, NULL);
+		// }
+		return;
+	}
+}
+// System.Void RandomAngleResetter::SimulatedWalkerUpdate()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RandomAngleResetter_SimulatedWalkerUpdate_m5CB231D8A858F2FAF78528E6279FE59979536FB1 (RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3* __this, const RuntimeMethod* method) 
+{
+	float V_0 = 0.0f;
+	{
+		// var rotateAngle = redirectionManager.GetDeltaTime() * redirectionManager.globalConfiguration.rotationSpeed;
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_0 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
+		NullCheck(L_0);
+		float L_1;
+		L_1 = RedirectionManager_GetDeltaTime_m84F1744D64A15348355612226350A88CD67C2273(L_0, NULL);
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_2 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
+		NullCheck(L_2);
+		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_3 = L_2->___globalConfiguration_11;
+		NullCheck(L_3);
+		float L_4 = L_3->___rotationSpeed_50;
+		V_0 = ((float)il2cpp_codegen_multiply(L_1, L_4));
+		// if (rotateAngle >= requiredRotateAngle)
+		float L_5 = V_0;
+		float L_6 = __this->___requiredRotateAngle_12;
+		if ((!(((float)L_5) >= ((float)L_6))))
+		{
+			goto IL_003a;
+		}
+	}
+	{
+		// rotateAngle = requiredRotateAngle;
+		float L_7 = __this->___requiredRotateAngle_12;
+		V_0 = L_7;
+		// requiredRotateAngle = 0;
+		__this->___requiredRotateAngle_12 = (0.0f);
+		goto IL_0048;
+	}
+
+IL_003a:
+	{
+		// requiredRotateAngle -= rotateAngle;
+		float L_8 = __this->___requiredRotateAngle_12;
+		float L_9 = V_0;
+		__this->___requiredRotateAngle_12 = ((float)il2cpp_codegen_subtract(L_8, L_9));
+	}
+
+IL_0048:
+	{
+		// redirectionManager.simulatedWalker.RotateInPlace(rotateAngle);
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_10 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
+		NullCheck(L_10);
+		SimulatedWalker_tDDE2ECC801271248ED31A0C4E0EEB7FF295D91F1* L_11 = L_10->___simulatedWalker_19;
+		float L_12 = V_0;
+		NullCheck(L_11);
+		SimulatedWalker_RotateInPlace_mABED8DD1538694EFFEE533ECDD58726A7C8560BE(L_11, L_12, NULL);
+		// }
+		return;
+	}
+}
+// System.Void RandomAngleResetter::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RandomAngleResetter__ctor_m31545D84B14DCF0FACE594DC82C688A91DBF1303 (RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
