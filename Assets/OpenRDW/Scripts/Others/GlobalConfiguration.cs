@@ -435,6 +435,51 @@ public class GlobalConfiguration : MonoBehaviour
         {
             //generate experimentSetups according to UI settings
             GenerateExperimentSetupsByUI();
+
+            switch (Choices.redirector)
+            {
+                case "s2c":
+                    transform.Find("Environment S2C").gameObject.SetActive(true);
+                    transform.Find("Environment S2O").gameObject.SetActive(false);
+                    transform.Find("Environment Thomas APF").gameObject.SetActive(false);
+                    transform.Find("Environment VisPoly").gameObject.SetActive(false);
+                    break;
+
+                case "s2o":
+                    transform.Find("Environment S2C").gameObject.SetActive(false);
+                    transform.Find("Environment S2O").gameObject.SetActive(true);
+                    transform.Find("Environment Thomas APF").gameObject.SetActive(false);
+                    transform.Find("Environment VisPoly").gameObject.SetActive(false);
+                    break;
+
+                case "thomas":
+                    transform.Find("Environment S2C").gameObject.SetActive(false);
+                    transform.Find("Environment S2O").gameObject.SetActive(false);
+                    transform.Find("Environment Thomas APF").gameObject.SetActive(true);
+                    transform.Find("Environment VisPoly").gameObject.SetActive(false);
+                    break;
+
+                case "vispoly":
+                    transform.Find("Environment S2C").gameObject.SetActive(false);
+                    transform.Find("Environment S2O").gameObject.SetActive(false);
+                    transform.Find("Environment Thomas APF").gameObject.SetActive(false);
+                    transform.Find("Environment VisPoly").gameObject.SetActive(true);
+                    break;
+
+                case "deeplearning":
+                    transform.Find("Environment S2C").gameObject.SetActive(false);
+                    transform.Find("Environment S2O").gameObject.SetActive(false);
+                    transform.Find("Environment Thomas APF").gameObject.SetActive(false);
+                    transform.Find("Environment VisPoly").gameObject.SetActive(true);
+                    break;
+                    
+                default:
+                    transform.Find("Environment S2C").gameObject.SetActive(false);
+                    transform.Find("Environment S2O").gameObject.SetActive(false);
+                    transform.Find("Environment Thomas APF").gameObject.SetActive(false);
+                    transform.Find("Environment VisPoly").gameObject.SetActive(false);
+                    break;
+            }
         }        
     }
 
