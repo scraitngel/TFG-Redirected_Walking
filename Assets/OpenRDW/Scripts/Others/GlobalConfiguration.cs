@@ -638,7 +638,7 @@ public class GlobalConfiguration : MonoBehaviour
         Utilities.CreateDirectoryIfNeeded(_resultDir);
         string experimentSamplesDirectory = _resultDir;
 
-        statisticsLogger.LogExperimentInfo(experimentSamplesDirectory + "userId_0/");
+        statisticsLogger.LogExperimentInfo(experimentSamplesDirectory + "userId_0/", experimentIterator);
 
         //save images
         if (exportImage) {
@@ -666,6 +666,7 @@ public class GlobalConfiguration : MonoBehaviour
 
         //initialize experiment results 
         statisticsLogger.InitializeExperimentResults();
+
     }
 
     IEnumerator LogImages() {

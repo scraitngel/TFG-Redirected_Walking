@@ -86,8 +86,8 @@ extern void StatisticsLogger_LogExperimentSummaryStatisticsResults_mD628ACF76A55
 extern void StatisticsLogger_LogExperimentSummaryStatisticsResultsSCSV_m0ED6AF4D97E5B09B6FBA926E644F3309AD7C6883 (void);
 // 0x00000025 System.Void StatisticsLogger::LogExperimentPathPictures(System.Int32)
 extern void StatisticsLogger_LogExperimentPathPictures_m1215B3AA98D2B820A264E26DECF0D10EBB34A9E1 (void);
-// 0x00000026 System.Void StatisticsLogger::LogExperimentInfo(System.String)
-extern void StatisticsLogger_LogExperimentInfo_m920E235628202433A47BEA54DAF0DA6F547A7BB0 (void);
+// 0x00000026 System.Void StatisticsLogger::LogExperimentInfo(System.String,System.Int32)
+extern void StatisticsLogger_LogExperimentInfo_m7F448066B77A6D7740CF757C8B749C4FCBA27F86 (void);
 // 0x00000027 System.Void StatisticsLogger::LogOneDimensionalExperimentSamples(System.String,System.String,System.Collections.Generic.List`1<System.Single>)
 extern void StatisticsLogger_LogOneDimensionalExperimentSamples_m58782B80645298F634573168AE17D001E0D8446D (void);
 // 0x00000028 System.Void StatisticsLogger::LogTwoDimensionalExperimentSamples(System.String,System.String,System.Collections.Generic.List`1<UnityEngine.Vector2>)
@@ -1995,7 +1995,7 @@ static Il2CppMethodPointer s_methodPointers[998] =
 	StatisticsLogger_LogExperimentSummaryStatisticsResults_mD628ACF76A557392279F3DA32738522E43E3EB60,
 	StatisticsLogger_LogExperimentSummaryStatisticsResultsSCSV_m0ED6AF4D97E5B09B6FBA926E644F3309AD7C6883,
 	StatisticsLogger_LogExperimentPathPictures_m1215B3AA98D2B820A264E26DECF0D10EBB34A9E1,
-	StatisticsLogger_LogExperimentInfo_m920E235628202433A47BEA54DAF0DA6F547A7BB0,
+	StatisticsLogger_LogExperimentInfo_m7F448066B77A6D7740CF757C8B749C4FCBA27F86,
 	StatisticsLogger_LogOneDimensionalExperimentSamples_m58782B80645298F634573168AE17D001E0D8446D,
 	StatisticsLogger_LogTwoDimensionalExperimentSamples_mC2B1A37B0D4BF7931A74AD9AA32DE7CBBAD72AC1,
 	StatisticsLogger_LogAllExperimentSamples_m480AFB30112CB149CE2330523FBB3D6F730F6142,
@@ -3003,7 +3003,7 @@ static const int32_t s_InvokerIndices[998] =
 	5227,
 	1615,
 	5201,
-	5227,
+	2932,
 	1615,
 	1615,
 	1615,

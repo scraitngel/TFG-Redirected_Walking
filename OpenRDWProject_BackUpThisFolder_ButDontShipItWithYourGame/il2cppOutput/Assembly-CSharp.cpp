@@ -740,6 +740,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral88A6EC3EDC646229778F6907B66CC19510F48BA3
 IL2CPP_EXTERN_C String_t* _stringLiteral88A7A35F4A80F2BBEB79D6767201C55752059489;
 IL2CPP_EXTERN_C String_t* _stringLiteral8BFB34B803290EC99384BD5EC71E56D02CE845CE;
 IL2CPP_EXTERN_C String_t* _stringLiteral8CA2457260F292D78E1A0EF6B84346E746881037;
+IL2CPP_EXTERN_C String_t* _stringLiteral8CCE34F3B0BE194BE2D5CA93DA96FEA5DF3A3920;
 IL2CPP_EXTERN_C String_t* _stringLiteral8DD8D6FCBA1E38E53530F55F7B9061E65C123321;
 IL2CPP_EXTERN_C String_t* _stringLiteral8E881228D829FA81BBD63BAE7A18E6AD86FD793B;
 IL2CPP_EXTERN_C String_t* _stringLiteral8F6DAC5462B097EE6DB9ACF0FABF97154122F5CB;
@@ -11486,20 +11487,31 @@ IL_0462:
 		return;
 	}
 }
-// System.Void StatisticsLogger::LogExperimentInfo(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StatisticsLogger_LogExperimentInfo_m920E235628202433A47BEA54DAF0DA6F547A7BB0 (StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* __this, String_t* ___experimentSamplesDirectory0, const RuntimeMethod* method) 
+// System.Void StatisticsLogger::LogExperimentInfo(System.String,System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StatisticsLogger_LogExperimentInfo_m7F448066B77A6D7740CF757C8B749C4FCBA27F86 (StatisticsLogger_tD65B5159379F4431937DD1D42D0F76C91E6BEEF2* __this, String_t* ___experimentSamplesDirectory0, int32_t ___a1, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Choices_tBFC03D35B75D768D3F5BA1A616A999DFF71C5578_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_Dispose_mCD48FDD0F418E976C266AF07E14C127B6E896A8C_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_MoveNext_m5DDD3E697A492E99DDE91E6AB7B2390C491F89AA_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Enumerator_get_Current_m03DDB9D6C95434581544F1F2FF0D1A36EEAB09AF_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_GetEnumerator_m3FE49C02F31954ACBAF7DF56A1CFED61E50524BA_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&List_1_get_Item_m18EC96131F7D7D64E13227D9952FCFD9B597EAA6_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Utilities_t6F35AFE0F28F4AF967399B21FCB76780ED3D6BFB_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral8CCE34F3B0BE194BE2D5CA93DA96FEA5DF3A3920);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral97F1335639B7E47EE13E13E41DF38A1CFE644CB4);
 		s_Il2CppMethodInitialized = true;
 	}
+	Enumerator_t24E4C96B84374CD9F71B748A47AB020F220D9931 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_1;
+	memset((&V_1), 0, sizeof(V_1));
 	{
 		// Utilities.CreateDirectoryIfNeeded(experimentSamplesDirectory);
 		String_t* L_0 = ___experimentSamplesDirectory0;
@@ -11555,6 +11567,98 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void StatisticsLogger_LogExperimentInfo_m920E
 		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_17 = __this->___csvWriter_35;
 		NullCheck(L_17);
 		VirtualActionInvoker0::Invoke(8 /* System.Void System.IO.TextWriter::Close() */, L_17);
+		// csvWriter = new StreamWriter(experimentSamplesDirectory + Utilities.GetTimeStringForFileName() + "-boundary.csv");
+		String_t* L_18 = ___experimentSamplesDirectory0;
+		String_t* L_19;
+		L_19 = Utilities_GetTimeStringForFileName_mD38822DC9D5906EFDC009F5E9AB938E2E44B7D14(NULL);
+		String_t* L_20;
+		L_20 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_18, L_19, _stringLiteral8CCE34F3B0BE194BE2D5CA93DA96FEA5DF3A3920, NULL);
+		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_21 = (StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4*)il2cpp_codegen_object_new(StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4_il2cpp_TypeInfo_var);
+		NullCheck(L_21);
+		StreamWriter__ctor_m7C83908E2616C22FA632EF67E36E137932E534D7(L_21, L_20, NULL);
+		__this->___csvWriter_35 = L_21;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___csvWriter_35), (void*)L_21);
+		// foreach (Vector2 point in globalConfiguration.experimentSetups[a].trackingSpacePoints) {
+		GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* L_22 = __this->___globalConfiguration_5;
+		NullCheck(L_22);
+		List_1_t32CC5CC2429AD251993FE646C25FF03D3119CB2B* L_23 = L_22->___experimentSetups_30;
+		int32_t L_24 = ___a1;
+		NullCheck(L_23);
+		ExperimentSetup_t238C6DAD99FE3B9C039D906357E5395559853464* L_25;
+		L_25 = List_1_get_Item_m18EC96131F7D7D64E13227D9952FCFD9B597EAA6(L_23, L_24, List_1_get_Item_m18EC96131F7D7D64E13227D9952FCFD9B597EAA6_RuntimeMethod_var);
+		NullCheck(L_25);
+		List_1_t8F3790B7F8C471B3A1336522C7415FB0AC36D47B* L_26 = L_25->___trackingSpacePoints_2;
+		NullCheck(L_26);
+		Enumerator_t24E4C96B84374CD9F71B748A47AB020F220D9931 L_27;
+		L_27 = List_1_GetEnumerator_m3FE49C02F31954ACBAF7DF56A1CFED61E50524BA(L_26, List_1_GetEnumerator_m3FE49C02F31954ACBAF7DF56A1CFED61E50524BA_RuntimeMethod_var);
+		V_0 = L_27;
+	}
+	{
+		auto __finallyBlock = il2cpp::utils::Finally([&]
+		{
+
+FINALLY_00ee:
+			{// begin finally (depth: 1)
+				Enumerator_Dispose_mCD48FDD0F418E976C266AF07E14C127B6E896A8C((&V_0), Enumerator_Dispose_mCD48FDD0F418E976C266AF07E14C127B6E896A8C_RuntimeMethod_var);
+				return;
+			}// end finally (depth: 1)
+		});
+		try
+		{// begin try (depth: 1)
+			{
+				goto IL_00e3_1;
+			}
+
+IL_00ae_1:
+			{
+				// foreach (Vector2 point in globalConfiguration.experimentSetups[a].trackingSpacePoints) {
+				Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_28;
+				L_28 = Enumerator_get_Current_m03DDB9D6C95434581544F1F2FF0D1A36EEAB09AF_inline((&V_0), Enumerator_get_Current_m03DDB9D6C95434581544F1F2FF0D1A36EEAB09AF_RuntimeMethod_var);
+				V_1 = L_28;
+				// csvWriter.WriteLine(point.x + ", " + point.y);
+				StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_29 = __this->___csvWriter_35;
+				float* L_30 = (&(&V_1)->___x_0);
+				String_t* L_31;
+				L_31 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_30, NULL);
+				float* L_32 = (&(&V_1)->___y_1);
+				String_t* L_33;
+				L_33 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_32, NULL);
+				String_t* L_34;
+				L_34 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(L_31, _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D, L_33, NULL);
+				NullCheck(L_29);
+				VirtualActionInvoker1< String_t* >::Invoke(22 /* System.Void System.IO.TextWriter::WriteLine(System.String) */, L_29, L_34);
+			}
+
+IL_00e3_1:
+			{
+				// foreach (Vector2 point in globalConfiguration.experimentSetups[a].trackingSpacePoints) {
+				bool L_35;
+				L_35 = Enumerator_MoveNext_m5DDD3E697A492E99DDE91E6AB7B2390C491F89AA((&V_0), Enumerator_MoveNext_m5DDD3E697A492E99DDE91E6AB7B2390C491F89AA_RuntimeMethod_var);
+				if (L_35)
+				{
+					goto IL_00ae_1;
+				}
+			}
+			{
+				goto IL_00fc;
+			}
+		}// end try (depth: 1)
+		catch(Il2CppExceptionWrapper& e)
+		{
+			__finallyBlock.StoreException(e.ex);
+		}
+	}
+
+IL_00fc:
+	{
+		// csvWriter.Flush();
+		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_36 = __this->___csvWriter_35;
+		NullCheck(L_36);
+		VirtualActionInvoker0::Invoke(10 /* System.Void System.IO.TextWriter::Flush() */, L_36);
+		// csvWriter.Close();
+		StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4* L_37 = __this->___csvWriter_35;
+		NullCheck(L_37);
+		VirtualActionInvoker0::Invoke(8 /* System.Void System.IO.TextWriter::Close() */, L_37);
 		// }
 		return;
 	}

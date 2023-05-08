@@ -16,6 +16,9 @@ public class RedirectionManager : MonoBehaviour
     [Tooltip("The game object that is being physically tracked (probably user's head)")]
     public Transform headTransform;
 
+    [SerializeField]
+    public Text textBox;
+
     //[Tooltip("Subtle Redirection Controller")]
     [HideInInspector]
     public RedirectorChoice redirectorChoice;

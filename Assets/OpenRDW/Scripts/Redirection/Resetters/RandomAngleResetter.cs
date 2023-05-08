@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEngine.UI;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -12,10 +13,11 @@ public class RandomAngleResetter : Resetter {
     ///// <summary>
     ///// The user must return to her original orientation for the reset to let go. Up to this amount of error is allowed.
     ///// </summary>    
-
     float overallInjectedRotation;
 
     float requiredRotateAngle = 0;
+
+    float gain;
 
     public override bool IsResetRequired()
     {
@@ -28,7 +30,9 @@ public class RandomAngleResetter : Resetter {
         overallInjectedRotation = 0;
         
         //rotate by simulatedWalker
-        requiredRotateAngle = Random.Range(90.0f, 270.0f);
+        requiredRotateAngle = Random.Range(140.0f, 220.0f);
+
+        gain = 360.0f / requiredRotateAngle;
 
         //rotate clockwise by default
         SetHUD(1);
@@ -47,10 +51,11 @@ public class RandomAngleResetter : Resetter {
             }
             else
             {
-                InjectRotation(redirectionManager.deltaDir);
-                overallInjectedRotation += redirectionManager.deltaDir;
+                InjectRotation(redirectionManager.deltaDir * (1 - gain));
+                overallInjectedRotation += (redirectionManager.deltaDir * (1 - gain));
             }
         }
+        redirectionManager.textBox.text = gain.ToString() + " " + requiredRotateAngle.ToString() + " " + overallInjectedRotation.ToString();
         //Debug.Log("requiredRotateAngle:" + requiredRotateAngle + "; overallInjectedRotation:" + overallInjectedRotation);
     }
 
