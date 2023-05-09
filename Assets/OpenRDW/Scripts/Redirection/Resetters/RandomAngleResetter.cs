@@ -39,23 +39,24 @@ public class RandomAngleResetter : Resetter {
     }
 
     public override void InjectResetting()
-    {        
-        if (Mathf.Abs(overallInjectedRotation) < requiredRotateAngle)
+    {       
+        float remainingRotation = -1f; 
+        if (Mathf.Abs(overallInjectedRotation) < 360.0f)
         {
-            float remainingRotation = redirectionManager.deltaDir > 0 ? requiredRotateAngle - overallInjectedRotation : -requiredRotateAngle - overallInjectedRotation; // The idea is that we're gonna keep going in this direction till we reach objective
-            if (Mathf.Abs(remainingRotation) < Mathf.Abs(redirectionManager.deltaDir) || requiredRotateAngle==0)
+            remainingRotation = redirectionManager.deltaDir > 0 ? 360f - overallInjectedRotation : - 360f - overallInjectedRotation; // The idea is that we're gonna keep going in this direction till we reach objective
+            if (Mathf.Abs(remainingRotation) < Mathf.Abs(redirectionManager.deltaDir) || requiredRotateAngle == 0)
             {
-                InjectRotation(remainingRotation);
+                InjectRotation(redirectionManager.deltaDir * (gain - 1));
                 redirectionManager.OnResetEnd();
-                overallInjectedRotation += remainingRotation;
+                overallInjectedRotation += (redirectionManager.deltaDir + redirectionManager.deltaDir * Mathf.Abs(gain - 1));
             }
             else
             {
-                InjectRotation(redirectionManager.deltaDir * (1 - gain));
-                overallInjectedRotation += (redirectionManager.deltaDir * (1 - gain));
+                InjectRotation(redirectionManager.deltaDir * (gain - 1));
+                overallInjectedRotation += (redirectionManager.deltaDir + redirectionManager.deltaDir * Mathf.Abs(gain - 1));
             }
         }
-        redirectionManager.textBox.text = gain.ToString() + " " + requiredRotateAngle.ToString() + " " + overallInjectedRotation.ToString();
+        redirectionManager.textBox.text = gain.ToString() + " " + requiredRotateAngle.ToString() + " " + overallInjectedRotation.ToString() + " " + remainingRotation;
         //Debug.Log("requiredRotateAngle:" + requiredRotateAngle + "; overallInjectedRotation:" + overallInjectedRotation);
     }
 

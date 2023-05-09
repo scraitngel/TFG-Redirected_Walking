@@ -37355,104 +37355,106 @@ struct RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC  : public Mo
 {
 	// UnityEngine.Transform RedirectionManager::headTransform
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___headTransform_5;
+	// UnityEngine.UI.Text RedirectionManager::textBox
+	Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* ___textBox_6;
 	// RedirectionManager/RedirectorChoice RedirectionManager::redirectorChoice
-	int32_t ___redirectorChoice_6;
+	int32_t ___redirectorChoice_7;
 	// RedirectionManager/ResetterChoice RedirectionManager::resetterChoice
-	int32_t ___resetterChoice_7;
+	int32_t ___resetterChoice_8;
 	// System.Type RedirectionManager::redirectorType
-	Type_t* ___redirectorType_8;
+	Type_t* ___redirectorType_9;
 	// System.Type RedirectionManager::resetterType
-	Type_t* ___resetterType_9;
+	Type_t* ___resetterType_10;
 	// System.Single RedirectionManager::samePosTime
-	float ___samePosTime_10;
+	float ___samePosTime_11;
 	// GlobalConfiguration RedirectionManager::globalConfiguration
-	GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* ___globalConfiguration_11;
+	GlobalConfiguration_tEA815086AE6F49AF3232F08DE26184F91FA67F1D* ___globalConfiguration_12;
 	// UnityEngine.Transform RedirectionManager::body
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___body_12;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___body_13;
 	// UnityEngine.Transform RedirectionManager::trackingSpace
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___trackingSpace_13;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___trackingSpace_14;
 	// UnityEngine.Transform RedirectionManager::simulatedHead
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___simulatedHead_14;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___simulatedHead_15;
 	// Redirector RedirectionManager::redirector
-	Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714* ___redirector_15;
+	Redirector_t44166E17CB6AFFFD020C7A323CD976C00C3A9714* ___redirector_16;
 	// Resetter RedirectionManager::resetter
-	Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8* ___resetter_16;
+	Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8* ___resetter_17;
 	// TrailDrawer RedirectionManager::trailDrawer
-	TrailDrawer_t4FAB03A115BA5DEE305A02D3D2831755E45680BA* ___trailDrawer_17;
+	TrailDrawer_t4FAB03A115BA5DEE305A02D3D2831755E45680BA* ___trailDrawer_18;
 	// MovementManager RedirectionManager::movementManager
-	MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* ___movementManager_18;
+	MovementManager_t9D2D2353559B705F88BEFA74EAE2490B90E03E50* ___movementManager_19;
 	// SimulatedWalker RedirectionManager::simulatedWalker
-	SimulatedWalker_tDDE2ECC801271248ED31A0C4E0EEB7FF295D91F1* ___simulatedWalker_19;
+	SimulatedWalker_tDDE2ECC801271248ED31A0C4E0EEB7FF295D91F1* ___simulatedWalker_20;
 	// KeyboardController RedirectionManager::keyboardController
-	KeyboardController_t906085279346E08350BE5CFB6CEF0F5B35F7FB59* ___keyboardController_20;
+	KeyboardController_t906085279346E08350BE5CFB6CEF0F5B35F7FB59* ___keyboardController_21;
 	// HeadFollower RedirectionManager::bodyHeadFollower
-	HeadFollower_tEBD63FF8B564317A3D943E9F2FFC939B97B9A50A* ___bodyHeadFollower_21;
+	HeadFollower_tEBD63FF8B564317A3D943E9F2FFC939B97B9A50A* ___bodyHeadFollower_22;
 	// System.Single RedirectionManager::priority
-	float ___priority_22;
+	float ___priority_23;
 	// UnityEngine.Vector3 RedirectionManager::currPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currPos_23;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currPos_24;
 	// UnityEngine.Vector3 RedirectionManager::currPosReal
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currPosReal_24;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currPosReal_25;
 	// UnityEngine.Vector3 RedirectionManager::prevPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___prevPos_25;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___prevPos_26;
 	// UnityEngine.Vector3 RedirectionManager::prevPosReal
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___prevPosReal_26;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___prevPosReal_27;
 	// UnityEngine.Vector3 RedirectionManager::currDir
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currDir_27;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currDir_28;
 	// UnityEngine.Vector3 RedirectionManager::currDirReal
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currDirReal_28;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___currDirReal_29;
 	// UnityEngine.Vector3 RedirectionManager::prevDir
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___prevDir_29;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___prevDir_30;
 	// UnityEngine.Vector3 RedirectionManager::prevDirReal
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___prevDirReal_30;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___prevDirReal_31;
 	// UnityEngine.Vector3 RedirectionManager::deltaPos
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___deltaPos_31;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___deltaPos_32;
 	// System.Single RedirectionManager::deltaDir
-	float ___deltaDir_32;
+	float ___deltaDir_33;
 	// UnityEngine.Transform RedirectionManager::targetWaypoint
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___targetWaypoint_33;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___targetWaypoint_34;
 	// System.Boolean RedirectionManager::inReset
-	bool ___inReset_34;
+	bool ___inReset_35;
 	// System.Boolean RedirectionManager::ifJustEndReset
-	bool ___ifJustEndReset_35;
+	bool ___ifJustEndReset_36;
 	// System.Single RedirectionManager::redirectionTime
-	float ___redirectionTime_36;
+	float ___redirectionTime_37;
 	// System.Single RedirectionManager::walkDist
-	float ___walkDist_37;
+	float ___walkDist_38;
 	// UnityEngine.AudioSource RedirectionManager::sourceAudio
-	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___sourceAudio_38;
+	AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* ___sourceAudio_39;
 	// NetworkManager RedirectionManager::networkManager
-	NetworkManager_t34FC479255EC74DE917E6E400B1430EBE2CCA7CB* ___networkManager_39;
+	NetworkManager_t34FC479255EC74DE917E6E400B1430EBE2CCA7CB* ___networkManager_40;
 	// UnityEngine.Transform RedirectionManager::blockingVisionObject
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___blockingVisionObject_40;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___blockingVisionObject_41;
 	// System.Boolean RedirectionManager::blinks
-	bool ___blinks_41;
+	bool ___blinks_42;
 	// System.Boolean RedirectionManager::sounds
-	bool ___sounds_42;
+	bool ___sounds_43;
 	// System.Boolean RedirectionManager::headMovement
-	bool ___headMovement_43;
+	bool ___headMovement_44;
 	// System.Boolean RedirectionManager::frames
-	bool ___frames_44;
+	bool ___frames_45;
 	// System.Single RedirectionManager::time
-	float ___time_45;
+	float ___time_46;
 	// System.Single RedirectionManager::blinkingTime
-	float ___blinkingTime_46;
+	float ___blinkingTime_47;
 	// System.Single RedirectionManager::blinkInterval
-	float ___blinkInterval_47;
+	float ___blinkInterval_48;
 	// System.Single RedirectionManager::soundInterval
-	float ___soundInterval_48;
+	float ___soundInterval_49;
 	// System.Single RedirectionManager::timeSound
-	float ___timeSound_49;
+	float ___timeSound_50;
 	// System.Boolean RedirectionManager::inBlink
-	bool ___inBlink_50;
+	bool ___inBlink_51;
 	// System.Boolean RedirectionManager::justRedirected
-	bool ___justRedirected_51;
+	bool ___justRedirected_52;
 	// System.Boolean RedirectionManager::inSound
-	bool ___inSound_52;
+	bool ___inSound_53;
 	// UnityEngine.Vector3 RedirectionManager::lastLookdirection
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___lastLookdirection_53;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___lastLookdirection_54;
 	// System.Int32 RedirectionManager::numRedireccion
-	int32_t ___numRedireccion_54;
+	int32_t ___numRedireccion_55;
 };
 
 struct RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC_StaticFields
@@ -39031,6 +39033,8 @@ struct RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3  : public R
 	float ___overallInjectedRotation_11;
 	// System.Single RandomAngleResetter::requiredRotateAngle
 	float ___requiredRotateAngle_12;
+	// System.Single RandomAngleResetter::gain
+	float ___gain_13;
 };
 
 // UnityEngine.UI.RectMask2D
@@ -46876,9 +46880,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5637[11] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5638[5] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5639[51] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5639[52] = 
 {
-	static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC_StaticFields, ___MaxSamePosTime_4)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___headTransform_5)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___redirectorChoice_6)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___resetterChoice_7)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___redirectorType_8)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___resetterType_9)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___samePosTime_10)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___globalConfiguration_11)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___body_12)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___trackingSpace_13)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___simulatedHead_14)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___redirector_15)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___resetter_16)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___trailDrawer_17)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___movementManager_18)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___simulatedWalker_19)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___keyboardController_20)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___bodyHeadFollower_21)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___priority_22)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___currPos_23)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___currPosReal_24)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___prevPos_25)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___prevPosReal_26)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___currDir_27)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___currDirReal_28)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___prevDir_29)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___prevDirReal_30)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___deltaPos_31)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___deltaDir_32)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___targetWaypoint_33)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___inReset_34)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___ifJustEndReset_35)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___redirectionTime_36)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___walkDist_37)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___sourceAudio_38)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___networkManager_39)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___blockingVisionObject_40)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___blinks_41)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___sounds_42)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___headMovement_43)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___frames_44)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___time_45)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___blinkingTime_46)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___blinkInterval_47)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___soundInterval_48)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___timeSound_49)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___inBlink_50)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___justRedirected_51)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___inSound_52)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___lastLookdirection_53)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___numRedireccion_54)),};
+	static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC_StaticFields, ___MaxSamePosTime_4)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___headTransform_5)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___textBox_6)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___redirectorChoice_7)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___resetterChoice_8)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___redirectorType_9)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___resetterType_10)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___samePosTime_11)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___globalConfiguration_12)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___body_13)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___trackingSpace_14)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___simulatedHead_15)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___redirector_16)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___resetter_17)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___trailDrawer_18)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___movementManager_19)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___simulatedWalker_20)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___keyboardController_21)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___bodyHeadFollower_22)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___priority_23)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___currPos_24)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___currPosReal_25)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___prevPos_26)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___prevPosReal_27)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___currDir_28)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___currDirReal_29)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___prevDir_30)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___prevDirReal_31)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___deltaPos_32)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___deltaDir_33)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___targetWaypoint_34)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___inReset_35)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___ifJustEndReset_36)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___redirectionTime_37)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___walkDist_38)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___sourceAudio_39)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___networkManager_40)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___blockingVisionObject_41)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___blinks_42)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___sounds_43)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___headMovement_44)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___frames_45)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___time_46)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___blinkingTime_47)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___blinkInterval_48)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___soundInterval_49)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___timeSound_50)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___inBlink_51)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___justRedirected_52)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___inSound_53)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___lastLookdirection_54)),static_cast<int32_t>(offsetof(RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC, ___numRedireccion_55)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5640[2] = 
 {
 	static_cast<int32_t>(offsetof(APF_Redirector_tF7DB7CD2F1F5A9DE927B24913E75E118F67FEEE0, ___totalForce_7)),static_cast<int32_t>(offsetof(APF_Redirector_tF7DB7CD2F1F5A9DE927B24913E75E118F67FEEE0, ___totalForcePointer_8)),};
@@ -46924,9 +46928,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5654[9] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5655[5] = 
 {
 	static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___requiredRotateSteerAngle_11)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___requiredRotateAngle_12)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___rotateDir_13)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___speedRatio_14)),static_cast<int32_t>(offsetof(APF_Resetter_tD60DD3915575614769BD76BB1451C8357DEC20F0, ___redirector_15)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5657[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5657[3] = 
 {
-	static_cast<int32_t>(offsetof(RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3, ___overallInjectedRotation_11)),static_cast<int32_t>(offsetof(RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3, ___requiredRotateAngle_12)),};
+	static_cast<int32_t>(offsetof(RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3, ___overallInjectedRotation_11)),static_cast<int32_t>(offsetof(RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3, ___requiredRotateAngle_12)),static_cast<int32_t>(offsetof(RandomAngleResetter_tECCD944319099470CEB78ABB3F9EE80C6D96B9C3, ___gain_13)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable5658[7] = 
 {
 	static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8_StaticFields, ___toleranceAngleError_4)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___redirectionManager_5)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___simulationManager_6)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___prefabHUD_7)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___instanceHUD_8)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___framesCount_9)),static_cast<int32_t>(offsetof(Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8, ___lastDistance_10)),};
