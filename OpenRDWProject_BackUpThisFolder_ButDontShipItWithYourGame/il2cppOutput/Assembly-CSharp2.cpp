@@ -10423,7 +10423,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RandomAngleResetter_InjectResetting_m99E
 		L_1 = fabsf(L_0);
 		if ((!(((float)L_1) < ((float)(360.0f)))))
 		{
-			goto IL_0122;
+			goto IL_0124;
 		}
 	}
 	{
@@ -10497,7 +10497,7 @@ IL_006d:
 		float L_22;
 		L_22 = fabsf(((float)il2cpp_codegen_subtract(L_21, (1.0f))));
 		__this->___overallInjectedRotation_11 = ((float)il2cpp_codegen_add(L_16, ((float)il2cpp_codegen_add(L_18, ((float)il2cpp_codegen_multiply(L_20, L_22))))));
-		goto IL_0122;
+		goto IL_012f;
 	}
 
 IL_00ce:
@@ -10520,58 +10520,67 @@ IL_00ce:
 		float L_32;
 		L_32 = fabsf(((float)il2cpp_codegen_subtract(L_31, (1.0f))));
 		__this->___overallInjectedRotation_11 = ((float)il2cpp_codegen_add(L_26, ((float)il2cpp_codegen_add(L_28, ((float)il2cpp_codegen_multiply(L_30, L_32))))));
+		goto IL_012f;
 	}
 
-IL_0122:
+IL_0124:
 	{
-		// redirectionManager.textBox.text = gain.ToString() + " " + requiredRotateAngle.ToString() + " " + overallInjectedRotation.ToString() + " " + remainingRotation;
+		// redirectionManager.OnResetEnd();
 		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_33 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
 		NullCheck(L_33);
-		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_34 = L_33->___textBox_6;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_35 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)7);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_36 = L_35;
-		float* L_37 = (&__this->___gain_13);
-		String_t* L_38;
-		L_38 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_37, NULL);
-		NullCheck(L_36);
-		ArrayElementTypeCheck (L_36, L_38);
-		(L_36)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)L_38);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_39 = L_36;
-		NullCheck(L_39);
-		ArrayElementTypeCheck (L_39, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
-		(L_39)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_40 = L_39;
-		float* L_41 = (&__this->___requiredRotateAngle_12);
-		String_t* L_42;
-		L_42 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_41, NULL);
-		NullCheck(L_40);
-		ArrayElementTypeCheck (L_40, L_42);
-		(L_40)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)L_42);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_43 = L_40;
-		NullCheck(L_43);
-		ArrayElementTypeCheck (L_43, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
-		(L_43)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_44 = L_43;
-		float* L_45 = (&__this->___overallInjectedRotation_11);
-		String_t* L_46;
-		L_46 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_45, NULL);
-		NullCheck(L_44);
-		ArrayElementTypeCheck (L_44, L_46);
-		(L_44)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)L_46);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_47 = L_44;
-		NullCheck(L_47);
-		ArrayElementTypeCheck (L_47, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
-		(L_47)->SetAt(static_cast<il2cpp_array_size_t>(5), (String_t*)_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_48 = L_47;
-		String_t* L_49;
-		L_49 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972((&V_0), NULL);
-		NullCheck(L_48);
-		ArrayElementTypeCheck (L_48, L_49);
-		(L_48)->SetAt(static_cast<il2cpp_array_size_t>(6), (String_t*)L_49);
-		String_t* L_50;
-		L_50 = String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A(L_48, NULL);
+		RedirectionManager_OnResetEnd_m21C73CC26E0C40AAC8201AE4725E384C19B5F008(L_33, NULL);
+	}
+
+IL_012f:
+	{
+		// redirectionManager.textBox.text = gain.ToString() + " " + requiredRotateAngle.ToString() + " " + overallInjectedRotation.ToString() + " " + remainingRotation;
+		RedirectionManager_tA0F7084D7221748854F245C5C205CEA4D9C569FC* L_34 = ((Resetter_tE53D5836177D0AC2958F526F1B082826D42A11A8*)__this)->___redirectionManager_5;
 		NullCheck(L_34);
-		VirtualActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_34, L_50);
+		Text_tD60B2346DAA6666BF0D822FF607F0B220C2B9E62* L_35 = L_34->___textBox_6;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_36 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)7);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_37 = L_36;
+		float* L_38 = (&__this->___gain_13);
+		String_t* L_39;
+		L_39 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_38, NULL);
+		NullCheck(L_37);
+		ArrayElementTypeCheck (L_37, L_39);
+		(L_37)->SetAt(static_cast<il2cpp_array_size_t>(0), (String_t*)L_39);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_40 = L_37;
+		NullCheck(L_40);
+		ArrayElementTypeCheck (L_40, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		(L_40)->SetAt(static_cast<il2cpp_array_size_t>(1), (String_t*)_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_41 = L_40;
+		float* L_42 = (&__this->___requiredRotateAngle_12);
+		String_t* L_43;
+		L_43 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_42, NULL);
+		NullCheck(L_41);
+		ArrayElementTypeCheck (L_41, L_43);
+		(L_41)->SetAt(static_cast<il2cpp_array_size_t>(2), (String_t*)L_43);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_44 = L_41;
+		NullCheck(L_44);
+		ArrayElementTypeCheck (L_44, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		(L_44)->SetAt(static_cast<il2cpp_array_size_t>(3), (String_t*)_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_45 = L_44;
+		float* L_46 = (&__this->___overallInjectedRotation_11);
+		String_t* L_47;
+		L_47 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972(L_46, NULL);
+		NullCheck(L_45);
+		ArrayElementTypeCheck (L_45, L_47);
+		(L_45)->SetAt(static_cast<il2cpp_array_size_t>(4), (String_t*)L_47);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_48 = L_45;
+		NullCheck(L_48);
+		ArrayElementTypeCheck (L_48, _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		(L_48)->SetAt(static_cast<il2cpp_array_size_t>(5), (String_t*)_stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_49 = L_48;
+		String_t* L_50;
+		L_50 = Single_ToString_mE282EDA9CA4F7DF88432D807732837A629D04972((&V_0), NULL);
+		NullCheck(L_49);
+		ArrayElementTypeCheck (L_49, L_50);
+		(L_49)->SetAt(static_cast<il2cpp_array_size_t>(6), (String_t*)L_50);
+		String_t* L_51;
+		L_51 = String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A(L_49, NULL);
+		NullCheck(L_35);
+		VirtualActionInvoker1< String_t* >::Invoke(75 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_35, L_51);
 		// }
 		return;
 	}

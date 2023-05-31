@@ -55,6 +55,8 @@ public class RandomAngleResetter : Resetter {
                 InjectRotation(redirectionManager.deltaDir * (gain - 1));
                 overallInjectedRotation += (redirectionManager.deltaDir + redirectionManager.deltaDir * Mathf.Abs(gain - 1));
             }
+        } else {
+            redirectionManager.OnResetEnd();
         }
         redirectionManager.textBox.text = gain.ToString() + " " + requiredRotateAngle.ToString() + " " + overallInjectedRotation.ToString() + " " + remainingRotation;
         //Debug.Log("requiredRotateAngle:" + requiredRotateAngle + "; overallInjectedRotation:" + overallInjectedRotation);
